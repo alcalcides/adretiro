@@ -1,12 +1,7 @@
 import React from "react";
-import { siteName } from "./adminAssets.json";
+
+import Routes from "./Routes";
 
 export default function App() {
-  return (
-    <div className="App">
-      <header>
-        <h1>{siteName}</h1>
-      </header>
-    </div>
-  );
+  return <Routes />;
 }

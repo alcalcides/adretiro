@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.2.0
++ Creates page "entrar"
+
 ## 0.1.3
 + Cleans up package.json 
 

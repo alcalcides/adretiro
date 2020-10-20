@@ -1,6 +1,6 @@
 {
   "name": "mais-retiro",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "private": true,
   "author": {
     "name": "Alcides Augusto Bezerra Neto",
@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
