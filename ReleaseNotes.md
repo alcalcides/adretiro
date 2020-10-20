@@ -1,0 +1,10 @@
+# Release Notes
+
+## 0.1.2
++ Cleans up files architecture
+
+## 0.1.1
++ Describes the project
+
+## 0.1.0
++ Launches default React App
