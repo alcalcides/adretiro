@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.1.3
++ Cleans up package.json 
+
 ## 0.1.2
 + Cleans up files architecture
 
