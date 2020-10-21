@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.2.3
++ Removes react-scripts test and eject
+
 ## 0.2.2
 + Removes eslintConfig property from package.json
 
