@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.2.4
++ Removes unnecessary devDependencies from package.json
+
 ## 0.2.3
 + Removes react-scripts test and eject
 
