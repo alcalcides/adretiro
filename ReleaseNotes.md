@@ -1,5 +1,11 @@
 # Release Notes
 
+## 0.2.2
++ Removes eslintConfig property from package.json
+
+## 0.2.1
++ Revert "Cleans up package.json"
+
 ## 0.2.0
 + Creates page "entrar"
 
