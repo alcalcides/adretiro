@@ -1,13 +1,11 @@
 import React from "react";
 
-import { siteName } from "../../adminAssets.json";
+import SiteTitle from "../../components/SiteTitle";
 
 export default function () {
   return (
-    <div className="App">
-      <header>
-        <h1>{siteName}</h1>
-      </header>
+    <div id="home">
+      <SiteTitle />
     </div>
   );
 }
