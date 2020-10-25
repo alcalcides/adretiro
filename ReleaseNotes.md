@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.3.0
++ Defines a design theme
+
 ## 0.2.4
 + Removes unnecessary devDependencies from package.json
 
