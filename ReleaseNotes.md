@@ -1,5 +1,8 @@
 # Release Notes
 
+# 0.4.0
++ Adopts MVC architecture
+
 ## 0.3.2
 + Cleans up architecture of src/pages
 ### Issues

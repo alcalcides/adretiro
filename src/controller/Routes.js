@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import Home from "./pages/home";
-import Entrar from "./pages/entrar";
+import Home from "../view/pages/home";
+import Entrar from "../view/pages/entrar";
 
 export default function Routes() {
   return (
