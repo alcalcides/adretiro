@@ -1,6 +1,6 @@
 import React from "react";
 
-import SiteTitle from "../../components/SiteTitle";
+import SiteTitle from "../components/SiteTitle";
 
 export default function () {
   return (

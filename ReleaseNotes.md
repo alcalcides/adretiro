@@ -1,9 +1,13 @@
 # Release Notes
 
+## 0.3.2
++ Cleans up architecture of src/pages
+### Issues
++ Defines an environment variable to site title and use it in adminAssets and public/index.html
+
 ## 0.3.1
 + Launches the logo
 ### Issues
-+ Clean architecture of src/pages
 + Defines an environment variable to site title and use it in adminAssets and public/index.html
 
 ## 0.3.0
