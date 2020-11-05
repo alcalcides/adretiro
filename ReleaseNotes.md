@@ -1,5 +1,9 @@
 # Release Notes
 
+# 0.5.0
++ Launches main menu
++ Imports Bootstrap 
+
 # 0.4.0
 + Adopts MVC architecture
 
