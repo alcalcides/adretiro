@@ -1,10 +1,14 @@
 # Release Notes
 
-# 0.5.0
+## 0.5.1
++ Fixes Login page name to 'Acessar Minha Conta'
++ Removes text decoration effect in menu items
+
+## 0.5.0
 + Launches main menu
 + Imports Bootstrap 
 
-# 0.4.0
+## 0.4.0
 + Adopts MVC architecture
 
 ## 0.3.2

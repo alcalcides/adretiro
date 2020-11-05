@@ -6,3 +6,8 @@ li {
 li a {
     color: #000;
 }
+
+li a:hover {
+    text-decoration: none;
+    color: initial;
+}
