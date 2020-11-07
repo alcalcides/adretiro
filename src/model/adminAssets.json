@@ -1,3 +1,9 @@
 {
-  "siteName": "Assembleia de Deus em Salvador - Congregação Retiro"
+  "siteName": "Assembleia de Deus em Salvador - Congregação Retiro",
+  "mainPublicPages": [
+    { "title": "Página Inicial", "slug": "" },
+    { "title": "Acessar Minha Conta", "slug": "acessar-minha-conta" },
+    { "title": "Fazer Cadastro", "slug": "fazer-cadastro" },
+    { "title": "Solicitar Nova Senha", "slug": "solicitar-nova-senha" }
+  ]
 }

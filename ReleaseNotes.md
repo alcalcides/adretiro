@@ -1,5 +1,13 @@
 # Release Notes
 
+## 0.5.2
++ Launches minified main public menu
++ Lets the logo links to the home page
++ Adds class property in MainMenuItem.css 
++ Adds pages data (titles and slug) in adminAssets.json
+### Issue
++ Use custom React Hooks in order to does not repeat navigator functions
+
 ## 0.5.1
 + Fixes Login page name to 'Acessar Minha Conta'
 + Removes text decoration effect in menu items

@@ -2,12 +2,14 @@ import React from "react";
 
 import MainMenuItem from "./MainMenuItem";
 
-export default function MainMenu() {
+import { mainPublicPages } from "../../model/adminAssets.json";
+
+export default function MainMenu({ currentSlugsPage}) {
   return (
     <ul id="MainMenu" className="my-5 list-unstyled">
-      <MainMenuItem label="Acessar Minha Conta" slug="acessar-minha-conta" />
-      <MainMenuItem label="Fazer Cadastro" slug="/" />
-      <MainMenuItem label="Solicitar Nova Senha" slug="/" />
+      {mainPublicPages.map((page) => page.slug !== currentSlugsPage && (
+        <MainMenuItem key={page.slug} label={page.title} slug={page.slug} />
+      ))}
     </ul>
   );
 }

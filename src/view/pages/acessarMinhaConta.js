@@ -1,5 +1,11 @@
 import React from "react";
 
+import MainMenuMinified from "../components/MainMenuMinified";
+
 export default function AcessarMinhaConta() {
-  return <h2>Acessar Minha Conta</h2>;
+  return (
+    <div id="AcessarMinhaConta">
+      <MainMenuMinified currentSlugsPage="acessar-minha-conta" />
+    </div>
+  );
 }

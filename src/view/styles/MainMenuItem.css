@@ -1,13 +1,13 @@
-li {
+li.mainMenuItem {
     background-color: #D1D0CD;
     font-size: 1.5rem;
 }
 
-li a {
+li.mainMenuItem a {
     color: #000;
 }
 
-li a:hover {
+li.mainMenuItem a:hover {
     text-decoration: none;
     color: initial;
 }

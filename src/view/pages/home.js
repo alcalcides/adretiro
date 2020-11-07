@@ -11,7 +11,7 @@ export default function () {
       </div>
       <div className="col-2 col-md-2"></div>
       <div className="col-10 col-md-4 align-self-center">
-        <MainMenu />
+        <MainMenu currentSlugsPage="" />
       </div>
     </div>
   );

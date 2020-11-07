@@ -1,0 +1,9 @@
+.mainMenuMinifiedItem {
+  cursor: pointer;
+  margin-left: 1.5rem;
+  color: black;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  margin: 1rem;
+}
