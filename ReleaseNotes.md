@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.3
++ Launches form Login
+### Issue
++ FormInputCheckTermsOfUse is not closed to modifications. Revisit others FormInput* components
+
 ## 0.5.2
 + Launches minified main public menu
 + Lets the logo links to the home page

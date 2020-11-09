@@ -8,3 +8,7 @@ body, input, textarea, button {
     font-weight: normal;
     font-size: 30px;
 }
+
+main {
+    margin: 1rem auto;
+}
