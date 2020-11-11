@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.5.4
++ Transforms form inputs to components
+
 ## 0.5.3
 + Launches form Login
 ### Issue

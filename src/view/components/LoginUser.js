@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
-import FormInputUserName from "./FormInputUserName";
-import FormInputPassword from "./FormInputPassword";
-import FormInputCheckTermOfUse from "./FormInputCheckTermOfUse";
-import FormInputFinalButton from "./FormInputFinalButton";
+import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUser() {
   const [username, setUsername] = useState("");
@@ -26,11 +23,13 @@ export default function LoginUser() {
   }
 
   return (
-    <form id="Login" className="col-10 col-md-6" onSubmit={handleUserLogin}>
-      <FormInputUserName username={username} setUsername={setUsername} />
-      <FormInputPassword password={password} setPassword={setPassword} />
-      <FormInputCheckTermOfUse setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse} />
-      <FormInputFinalButton callToAction={"Acessar Minha Conta"}/>
-    </form>
+    <LoginUserForm
+      handleUserLogin={handleUserLogin}
+      username={username}
+      setUsername={setUsername}
+      password={password}
+      setPassword={setPassword}
+      setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
+    />
   );
 }

@@ -1,13 +1,13 @@
 import React from "react";
 
-export default function FormInputPassword({ password, setPassword }) {
+export default function FormInputPassword({ password, setPassword, labelContent, propertyID }) {
   return (
     <div className="form-group">
-      <label htmlFor="usersPassword">Senha</label>
+      <label htmlFor={propertyID}>{labelContent}</label>
       <input
         type="password"
         className="form-control"
-        id="usersPassword"
+        id={propertyID}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />

@@ -1,28 +1,32 @@
 import React from "react";
 
-export default function FormInputCheckTermOfUse({ setHasAcceptedTermsOfUse }) {
+export default function FormInputSwitch({
+  setHasAcceptedTermsOfUse,
+  labelContent,
+  propertyID,
+}) {
   return (
     <div className="custom-control custom-switch text-success my-3">
       <input
         type="checkbox"
         className="custom-control-input"
-        id="switchForTermsOfUse"
+        id={propertyID}
         onClick={(e) =>
           setHasAcceptedTermsOfUse(
-            document.querySelector("#switchForTermsOfUse").checked
+            document.querySelector(`#${propertyID}`).checked
           )
         }
       />
       <label
         className="custom-control-label h5"
-        htmlFor="switchForTermsOfUse"
+        htmlFor={propertyID}
         onClick={(e) =>
           setHasAcceptedTermsOfUse(
-            document.querySelector("#switchForTermsOfUse").checked
+            document.querySelector(`#${propertyID}`).checked
           )
         }
       >
-        Concordo com os termos de uso
+        {labelContent}
       </label>
     </div>
   );
