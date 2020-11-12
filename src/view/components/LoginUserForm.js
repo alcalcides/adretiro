@@ -14,7 +14,7 @@ export default function LoginUserForm({
   setHasAcceptedTermsOfUse,
 }) {
   return (
-    <form id="Login" className="col-10 col-md-6" onSubmit={handleUserLogin}>
+    <form id="LoginUserForm" className="col-10 col-md-6" onSubmit={handleUserLogin}>
       <FormInputText
         username={username}
         setUsername={setUsername}

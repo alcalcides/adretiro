@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.5.5
++ Creates title for public pages
++ Alters color theme
+
 ## 0.5.4
 + Transforms form inputs to components
 

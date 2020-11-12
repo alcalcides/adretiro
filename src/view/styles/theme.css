@@ -1,5 +1,5 @@
 body {
-    color: #D1D1D1;
+    color: linen;
     background-color: #000B3A;
 }
 
@@ -11,4 +11,10 @@ body, input, textarea, button {
 
 main {
     margin: 1rem auto;
+}
+
+.publicPageTitle {
+    color: lightblue;
+    margin: 1rem;
+    text-align: center;
 }
