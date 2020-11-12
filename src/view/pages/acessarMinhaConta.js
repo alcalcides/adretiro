@@ -7,7 +7,7 @@ export default function AcessarMinhaConta() {
   return (
     <div id="AcessarMinhaConta">
       <MainMenuMinified currentSlugsPage="acessar-minha-conta" />
-      <h2 className="publicPageTitle">Acessa Minha Conta</h2>
+      <h2 className="publicPageTitle">Acessar Minha Conta</h2>
       <main className="row no-gutters justify-content-center">
         <LoginUser />
       </main>

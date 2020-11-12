@@ -27,15 +27,16 @@ export default function MainMenuMinified({ currentSlugsPage }) {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="col-8">
         <Nav className="ml-auto">
-          {mainPublicPages.map((page) => page.slug !== currentSlugsPage && (
-            <Nav.Item
+          {mainPublicPages.map((page) => (
+            <Nav.Link
               key={page.title}
               onClick={goToPage(page.slug)}
-              className="mainMenuMinifiedItem GRAY_THEME_COLOR_background"
+              className="mainMenuMinifiedItem"
               title={page.title}
+              disabled={('/' + page.slug) === document.location.pathname}
             >
               {page.title}
-            </Nav.Item>
+            </Nav.Link>
           ))}
         </Nav>
       </Navbar.Collapse>

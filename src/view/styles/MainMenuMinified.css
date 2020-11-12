@@ -1,9 +1,15 @@
 .mainMenuMinifiedItem {
-  cursor: pointer;
-  margin-left: 1.5rem;
-  color: black;
-  padding: 0.5rem 1rem;
-  border-radius: 10px;
   font-size: 1.2rem;
   margin: 1rem;
+  transition: all 0.2s;
+}
+
+.mainMenuMinifiedItem:hover {
+  font-style: italic;
+  color: lightblue !important;
+}
+
+.mainMenuMinifiedItem.disabled {
+  color: #2f9dc2 !important;
+  font-style: italic;
 }

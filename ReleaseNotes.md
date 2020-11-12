@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.6
++ Launches page 'Solicitar Nova Senha'
++ Colors menu items dynamically
++ Fixes login page title
+
 ## 0.5.5
 + Creates title for public pages
 + Alters color theme
