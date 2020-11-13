@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import Home from "../view/pages/home";
 import AcessarMinhaConta from "../view/pages/acessarMinhaConta";
+import FazerCadastro from "../view/pages/fazerCadastro";
 import SolicitarNovaSenha from "../view/pages/solicitarNovaSenha";
 
 export default function Routes() {
@@ -11,6 +12,7 @@ export default function Routes() {
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/acessar-minha-conta" component={AcessarMinhaConta} />
+        <Route path="/fazer-cadastro" component={FazerCadastro} />
         <Route path="/solicitar-nova-senha" component={SolicitarNovaSenha} />
       </Switch>
     </BrowserRouter>

@@ -1,9 +1,9 @@
 import React from "react";
 
-import FormInputText from "./FormInputText";
 import FormInputPassword from "./FormInputPassword";
 import FormInputSwitch from "./FormInputSwitch";
 import FormInputFinalButton from "./FormInputFinalButton";
+import FormInputPatternUserName from "./FormInputPatternUserName";
 
 export default function LoginUserForm({
   handleUserLogin,
@@ -15,11 +15,10 @@ export default function LoginUserForm({
 }) {
   return (
     <form id="LoginUserForm" className="col-10 col-md-6" onSubmit={handleUserLogin}>
-      <FormInputText
-        username={username}
-        setUsername={setUsername}
-        labelContent="Seu nome de identificação no sistema"
-        propertyID="userName"
+      <FormInputPatternUserName   
+        content={username}
+        setContent={setUsername}
+        propertyID="userNameForLogin"
       />
       <FormInputPassword
         password={password}
@@ -29,7 +28,7 @@ export default function LoginUserForm({
       />
       <FormInputSwitch
         setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
-        labelContent="Concordo com os termos de uso"
+        labelContent="Concordo com os Termos de Uso"
         propertyID="switchForTermsOfUse"
       />
       <FormInputFinalButton callToAction={"Acessar Minha Conta"} />

@@ -1,22 +1,19 @@
 import React from "react";
 
-export default function FormInputText({
+export default function FormInputPhoneNumber({
   title,
   tip,
   content,
   setContent,
-  placeholder,
   propertyID,
 }) {
   return (
     <div className="form-group">
       <label htmlFor={propertyID}>{title}</label>
       <input
-        type="text"
+        type="tel"
         className="form-control"
         id={propertyID}
-        aria-describedby={`${propertyID}Help`}
-        placeholder={placeholder}
         value={content}
         onChange={(e) => setContent(e.target.value)}
       />

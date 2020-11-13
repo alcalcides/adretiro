@@ -1,5 +1,11 @@
 # Release Notes
 
+## 0.5.7
++ Launches page 'Fazer Cadastro'
+### Issues
++ The main menu items are not in a good order
++ Spread margin between div in the page 'Fazer Cadastro' to others public pages
+
 ## 0.5.6
 + Launches page 'Solicitar Nova Senha'
 + Colors menu items dynamically

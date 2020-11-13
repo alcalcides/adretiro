@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import ResetPasswordForm from "./ResetPasswordForm";
 
 export default function ResetPassword() {
-  const [username, setUsername] = useState("");
+  const [fullName, setFullName] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
   function handlePasswordReset(e) {
@@ -13,7 +13,7 @@ export default function ResetPassword() {
     }
 
     console.log({
-      username,
+      fullName,
       hasAcceptedTermsOfUse,
     });
 
@@ -23,8 +23,8 @@ export default function ResetPassword() {
   return (
     <ResetPasswordForm
       handlePasswordReset={handlePasswordReset}
-      username={username}
-      setUsername={setUsername}
+      fullName={fullName}
+      setFullName={setFullName}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
     />
   );
