@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/LoginUserForm.css";
+
 import FormInputPassword from "./FormInputPassword";
 import FormInputSwitch from "./FormInputSwitch";
 import FormInputFinalButton from "./FormInputFinalButton";
@@ -14,7 +16,7 @@ export default function LoginUserForm({
   setHasAcceptedTermsOfUse,
 }) {
   return (
-    <form id="LoginUserForm" className="col-10 col-md-6" onSubmit={handleUserLogin}>
+    <form id="LoginUserForm" className="col-10 col-md-6 publicForms" onSubmit={handleUserLogin}>
       <FormInputPatternUserName   
         content={username}
         setContent={setUsername}

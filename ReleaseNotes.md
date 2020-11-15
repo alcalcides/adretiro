@@ -1,5 +1,9 @@
 # Release Notes
 
+## 0.5.8
++ Sorts the main menu items
++ Styles all public page forms with the same margin
+
 ## 0.5.7
 + Launches page 'Fazer Cadastro'
 ### Issues

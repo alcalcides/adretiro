@@ -1,5 +1,7 @@
 import React from "react";
 
+import "../styles/ResetPasswordForm.css";
+
 import FormInputPatternFullName from "./FormInputPatternFullName";
 import FormInputSwitch from "./FormInputSwitch";
 import FormInputFinalButton from "./FormInputFinalButton";
@@ -13,7 +15,7 @@ export default function ResetPasswordForm({
   return (
     <form
       id="ResetPasswordForm"
-      className="col-10 col-md-6"
+      className="col-10 col-md-6 publicForms"
       onSubmit={handlePasswordReset}
     >
       <FormInputPatternFullName content={fullName} setContent={setFullName} />

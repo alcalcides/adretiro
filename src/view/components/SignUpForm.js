@@ -32,7 +32,7 @@ export default function SignUpForm({
   setHasAcceptedTermsOfUse,
 }) {
   return (
-    <form id="SignUpForm" className="col-10 col-md-6" onSubmit={handleSignUp}>
+    <form id="SignUpForm" className="col-10 col-md-6 publicForms" onSubmit={handleSignUp}>
       <FormInputPatternFullName
         content={fullName}
         setContent={setFullName}
