@@ -1,15 +1,15 @@
-.mainMenuMinifiedItem {
+.menuMinifiedItem {
   font-size: 1.2rem;
   margin: 1rem;
   transition: all 0.2s;
 }
 
-.mainMenuMinifiedItem:hover {
+.menuMinifiedItem:hover {
   font-style: italic;
   color: lightblue !important;
 }
 
-.mainMenuMinifiedItem.disabled {
+.menuMinifiedItem.disabled {
   color: #2f9dc2 !important;
   font-style: italic;
 }

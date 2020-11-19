@@ -5,5 +5,11 @@
     { "title": "Fazer Cadastro", "slug": "fazer-cadastro" },
     { "title": "Acessar Minha Conta", "slug": "acessar-minha-conta" },
     { "title": "Solicitar Nova Senha", "slug": "solicitar-nova-senha" }
+  ],
+  "membersPages": [
+    { "title": "Meus Filhos de Jacó", "slug": "meus-filhos-de-jaco" },
+    { "title": "Meu Perfil", "slug": "meu-perfil" },
+    { "title": "Minhas Contribuições", "slug": "minhas-contribuicoes" },
+    { "title": "Minhas Senhas", "slug": "minhas-senhas" }
   ]
 }
