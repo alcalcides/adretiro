@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUser() {
+  const history = useHistory();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
@@ -20,6 +22,7 @@ export default function LoginUser() {
     });
 
     alert(`Em construção.`);
+    history.push("/meus-filhos-de-jaco/userteste");
   }
 
   return (

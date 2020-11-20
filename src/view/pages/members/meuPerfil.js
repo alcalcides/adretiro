@@ -5,7 +5,7 @@ import { membersPages } from "../../../model/adminAssets.json";
 import MenuMinified from "../../components/MenuMinified";
 
 export default function MeuPerfil() {
-  const userName = "alcalcides";
+  const userName = "userteste";
   return (
     <div id="MeuPerfil">
       <MenuMinified
@@ -14,7 +14,7 @@ export default function MeuPerfil() {
         bgColor="dark"
         variantColor="dark"
       />
-      <h2>Meu Perfil</h2>
+      <h2 className="memberAreaPageTitle">Meu Perfil</h2>
       <main>Content</main>
       <button>CTA</button>
     </div>

@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.5.10
++ Fixes logo background
+
 ## 0.5.9
 + Launches member area menu
 
