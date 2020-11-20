@@ -10,6 +10,7 @@ export default function FormInputPassword({ password, setPassword, labelContent,
         id={propertyID}
         value={password}
         onChange={(e) => setPassword(e.target.value)}
+        placeholder="**************"
       />
     </div>
   );

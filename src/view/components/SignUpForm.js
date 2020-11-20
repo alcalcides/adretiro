@@ -26,10 +26,12 @@ export default function SignUpForm({
   email,
   setEmail,
   phoneNumber,
+  defaultChecked = [],
   setPhoneNumber,
   password,
   setPassword,
   setHasAcceptedTermsOfUse,
+  CTAFormSending
 }) {
   return (
     <form id="SignUpForm" className="col-10 col-md-6 publicForms" onSubmit={handleSignUp}>
@@ -63,7 +65,7 @@ export default function SignUpForm({
         setContent={setPhoneNumber}
         propertyID="phoneNumberForSignUp"
       />
-      <FormInputPatternDepartments propertyID="departmentsForSignUp" />
+      <FormInputPatternDepartments propertyID="departmentsForSignUp" defaultChecked={defaultChecked}/>
       <FormInputPassword
         password={password}
         setPassword={setPassword}
@@ -75,7 +77,7 @@ export default function SignUpForm({
         labelContent="Concordo com os Termos de Uso"
         propertyID="switchForTermsOfUse"
       />
-      <FormInputFinalButton callToAction={"Acessar Minha Conta"} />
+      <FormInputFinalButton callToAction={CTAFormSending} />
     </form>
   );
 }

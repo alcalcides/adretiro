@@ -1,5 +1,8 @@
 # Release Notes
 
+## 0.5.11
++ Launches page 'Meu Perfil'
+
 ## 0.5.10
 + Fixes logo background
 

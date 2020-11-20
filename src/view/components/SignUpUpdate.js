@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import SignUpForm from "./SignUpForm";
 
-export default function SignUp() {
+export default function SignUpUpdate() {
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -10,10 +10,11 @@ export default function SignUp() {
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [enrolledDepartments] = useState([]);  
+  const [defaultEnrolledDepartments, setDefaultEnrolledDepartments] = useState([]);  
   const [password, setPassword] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
-  function handleSignUp(e) {
+  function handleSignUpUpdate(e) {
     e.preventDefault();
     if (!hasAcceptedTermsOfUse) {
       return alert("Aceite os Termos de Uso");
@@ -36,9 +37,19 @@ export default function SignUp() {
     alert(`Em construção.`);
   }
 
+  useEffect(() => {
+    setFullName("user teste");
+    setUsername("userteste");
+    setBirthday("1990-02-02");
+    setMothersFullName("minha mãe");
+    setEmail("meu@email.teste");
+    setPhoneNumber("+5571998765432");
+    setDefaultEnrolledDepartments(["Senhores", "Crianças"])
+  }, []);
+  
   return (
     <SignUpForm    
-      handleSignUp={handleSignUp}
+      handleSignUp={handleSignUpUpdate}
       fullName={fullName}
       setFullName={setFullName}
       username={username}
@@ -50,12 +61,13 @@ export default function SignUp() {
       email={email}
       setEmail={setEmail}
       phoneNumber={phoneNumber}
+      defaultChecked={defaultEnrolledDepartments}
       setPhoneNumber={setPhoneNumber}
       password={password}
       setPassword={setPassword}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
-      CTAFormSending="Fazer Cadastro"
-    />
+      CTAFormSending="Salvar Alterações"
+    />    
   );
 
   function handleDepartments() {
@@ -65,4 +77,5 @@ export default function SignUp() {
         enrolledDepartments.push(department.value);
     });
   }
+
 }
