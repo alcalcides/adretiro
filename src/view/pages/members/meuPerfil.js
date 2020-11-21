@@ -3,7 +3,7 @@ import React from "react";
 import { membersPages } from "../../../model/adminAssets.json";
 
 import MenuMinified from "../../components/MenuMinified";
-import SingUpUpdate from "../../components/SignUpUpdate";
+import ProfileUpdate from "../../components/ProfileUpdate";
 
 export default function MeuPerfil() {
   const userName = "userteste";
@@ -17,7 +17,7 @@ export default function MeuPerfil() {
       />
       <h2 className="memberAreaPageTitle">Meu Perfil</h2>
       <main className="row no-gutters justify-content-center">
-        <SingUpUpdate />
+        <ProfileUpdate />
       </main>
     </div>
   );

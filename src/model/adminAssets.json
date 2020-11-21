@@ -11,5 +11,19 @@
     { "title": "Meu Perfil", "slug": "meu-perfil" },
     { "title": "Minhas Contribuições", "slug": "minhas-contribuicoes" },
     { "title": "Minhas Senhas", "slug": "minhas-senhas" }
+  ],
+  "jacobSuns": [
+    "gade",
+    "asser",
+    "da",
+    "naftali",
+    "jose",
+    "benjamim",
+    "ruben",
+    "simeao",
+    "levi",
+    "juda",
+    "issacar",
+    "zebulom"
   ]
 }

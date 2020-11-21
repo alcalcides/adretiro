@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import SignUpForm from "./SignUpForm";
 
-export default function SignUpUpdate() {
+export default function ProfileUpdate() {
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [birthday, setBirthday] = useState("");

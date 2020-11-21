@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.12
++ Launches page 'Meus filhos de Jacó'
+### Issues
++ Launches a footer
+
 ## 0.5.11
 + Launches page 'Meu Perfil'
 
