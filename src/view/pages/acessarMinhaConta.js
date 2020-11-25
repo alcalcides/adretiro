@@ -4,6 +4,7 @@ import { mainPublicPages } from "../../model/adminAssets.json";
 
 import MenuMinified from "../components/MenuMinified";
 import LoginUser from "../components/LoginUser";
+import Footer from "../components/Footer";
 
 export default function AcessarMinhaConta() {
   return (
@@ -13,6 +14,7 @@ export default function AcessarMinhaConta() {
       <main className="row no-gutters justify-content-center">
         <LoginUser />
       </main>
+      <Footer/>
     </div>
   );
 }

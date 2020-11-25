@@ -1,5 +1,10 @@
 # Release Notes
 
+### 0.5.14
++ Spreads footer along all pages
+### Issues
++ Show the user name in some place in member area pages
+
 ## 0.5.13
 + Launches a footer
 ### Issues

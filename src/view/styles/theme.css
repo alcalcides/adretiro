@@ -16,7 +16,7 @@ main {
 
 .publicPageTitle, .memberAreaPageTitle {
     color: lightblue;
-    margin: 1rem;
+    margin: 1rem auto;
     text-align: center;
 }
 

@@ -4,7 +4,7 @@ import "../styles/opacityClass.css";
 
 export default function JacobSun({ sun, obtained }) {
   return (
-    <div
+    <span
       className={`col-6 col-sm-4 col-md-3 col-lg-2 
         bg-white p-3 border 
         d-flex justify-content-center
@@ -16,6 +16,6 @@ export default function JacobSun({ sun, obtained }) {
         className="img-fluid"
         alt={sun}
       />
-    </div>
+    </span>
   );
 }

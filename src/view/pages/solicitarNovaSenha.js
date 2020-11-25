@@ -4,6 +4,7 @@ import { mainPublicPages } from "../../model/adminAssets.json";
 
 import MenuMinified from "../components/MenuMinified";
 import ResetPassaword from "../components/ResetPassword";
+import Footer from "../components/Footer";
 
 export default function SolicitarNovaSenha() {
   return (
@@ -13,6 +14,7 @@ export default function SolicitarNovaSenha() {
       <main className="row no-gutters justify-content-center">
         <ResetPassaword />
       </main>
+      <Footer/>
     </div>
   );
 }

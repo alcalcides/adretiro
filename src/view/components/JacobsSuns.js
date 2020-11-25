@@ -6,12 +6,10 @@ import JacobSun from "./JacobSun";
 
 export default function JacobsSuns({ myJacobSuns }) {
   return (
-    <div className="container">
-      <div className="row">
-        {jacobSuns.map((sun) => (
-          <JacobSun key={sun} sun={sun} obtained={!myJacobSuns.includes(sun)} />
-        ))}
-      </div>
-    </div>
+    <span className="row no-gutters">
+      {jacobSuns.map((sun) => (
+        <JacobSun key={sun} sun={sun} obtained={!myJacobSuns.includes(sun)} />
+      ))}
+    </span>
   );
 }
