@@ -1,5 +1,10 @@
 # Release Notes
 
+## 0.5.13
++ Launches a footer
+### Issues
++ Spread footer along all pages
+
 ## 0.5.12
 + Launches page 'Meus filhos de Jacó'
 ### Issues

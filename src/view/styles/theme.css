@@ -11,10 +11,15 @@ body, input, textarea, button {
 
 main {
     margin: 1rem auto;
+    min-height: 100vh;
 }
 
 .publicPageTitle, .memberAreaPageTitle {
     color: lightblue;
     margin: 1rem;
     text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
 }
