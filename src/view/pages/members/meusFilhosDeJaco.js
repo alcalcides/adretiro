@@ -6,6 +6,7 @@ import { getUserNameFromURL } from "../../../model/library/utils";
 
 import MenuMinified from "../../components/MenuMinified";
 import JacobsSuns from "../../components/JacobsSuns";
+import ButtonAnimated from "../../components/ButtonAnimated";
 import Footer from "../../components/Footer";
 
 export default function MeusFilhosDeJaco() {
@@ -16,6 +17,18 @@ export default function MeusFilhosDeJaco() {
     setUserName(getUserNameFromURL());
     setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]);
   }, []);
+
+  function handleRewardRequest(e) {
+    e.preventDefault();
+    if (myJacobSuns.length < 12) {
+      const stickersLacking = 12 - myJacobSuns.length;
+      return alert(
+        `Acumule mais ${stickersLacking} filhos de Jacó para pedir seu prêmio.`
+      );
+    } else {
+      return alert("Em construção");
+    }
+  }
 
   return (
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">
@@ -36,6 +49,16 @@ export default function MeusFilhosDeJaco() {
         <div className="row no-gutters justify-content-center">
           <div className="col-9" id="stickersFrame">
             <JacobsSuns myJacobSuns={myJacobSuns} />
+          </div>
+        </div>
+        <div className="row no-gutters">
+          <div className="col my-3 text-center" id="rewardRequest">
+            <ButtonAnimated
+              callToAction="Quero meu brinde"
+              actionToPerform={handleRewardRequest}
+              animation="myBig"
+              specialStyles="myRed"
+            />
           </div>
         </div>
       </main>

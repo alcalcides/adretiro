@@ -1,0 +1,9 @@
+.ButtonAnimated {
+  cursor: pointer;
+  border-radius: 0.4rem;
+  padding: 1rem 2rem;
+  margin: 1.5rem;
+  font-size: 1.5rem;
+}
+
+@import "animations/myBig.css";

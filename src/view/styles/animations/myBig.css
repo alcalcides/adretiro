@@ -1,0 +1,11 @@
+button.myBig {
+  transition: transform 0.1s;
+}
+
+button.myBig:hover {
+  transform: scale(1.1);
+}
+
+button.myBig:active {
+  transform: scale(1.5);
+} 
