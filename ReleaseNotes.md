@@ -1,9 +1,17 @@
 # Release Notes
 
-### 0.5.14
+### 0.5.16
++ Uses React Context to clean up the code
+### Issues
++ Spread React Context method along all app
++ Order Member Menu and add "log out"
++ Show the user name in some place in member area pages
++ [CSS] Reset animated button style after be clicked in mobiles devices
+
+### 0.5.15
 + Launches animated buttons to special actions
 ### Issues
-+ Reset animated button style after be clicked 
++ Reset animated button style after be clicked in mobiles devices
 + Show the user name in some place in member area pages
 
 ### 0.5.14
