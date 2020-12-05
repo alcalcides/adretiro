@@ -9,7 +9,7 @@ import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
 
 export default function MeusFilhosDeJacoFrame() {
-  const { userName, myJacobSuns, handleRewardRequest } = useContext(Context);
+  const { userName, handleRewardRequest } = useContext(Context);
 
   return (
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">
@@ -29,7 +29,7 @@ export default function MeusFilhosDeJacoFrame() {
       <main>
         <div className="row no-gutters justify-content-center">
           <div className="col-9" id="stickersFrame">
-            <JacobsSuns myJacobSuns={myJacobSuns} />
+            <JacobsSuns/>
           </div>
         </div>
         <div className="row no-gutters">

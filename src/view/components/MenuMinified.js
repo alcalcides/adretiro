@@ -10,7 +10,7 @@ export default function MenuMinified({
   pages,
   userName = null,
   bgColor,
-  variantColor,
+  variantColor
 }) {
   return (
     <Navbar collapseOnSelect expand="md" bg={bgColor} variant={variantColor}>
