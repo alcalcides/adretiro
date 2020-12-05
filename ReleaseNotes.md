@@ -1,10 +1,18 @@
 # Release Notes
 
+### 0.5.18
++ Uses React Context to page 'Meu Perfil'
+### Issues
++ Spread React Context method along all app
++ Order Member Menu and add "log out". Set page active color
++ Show the user name in some place in member area pages
++ [CSS] Reset animated button style after be clicked in mobiles devices
+
 ### 0.5.17
 + Uses React Context to page 'Meus Filhos de Jacó'
 ### Issues
 + Spread React Context method along all app
-+ Order Member Menu and add "log out"
++ Order Member Menu and add "log out". Set page active color
 + Show the user name in some place in member area pages
 + [CSS] Reset animated button style after be clicked in mobiles devices
 
