@@ -1,5 +1,13 @@
 # Release Notes
 
+### 0.5.19
++ Update Readme file 
+### Issues 
++ Spread React Context method along all app 
++ Sort member menu and add "log out" and set active color for active page. 
++ Show the user name in some place in member area pages 
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ### 0.5.18
 + Uses React Context to page 'Meu Perfil'
 ### Issues
