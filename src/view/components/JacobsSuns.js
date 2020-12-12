@@ -1,13 +1,10 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { jacobSuns } from "../../model/adminAssets.json";
-import { Context } from "../pages/members/meusFilhosDeJaco";
 
 import JacobSun from "./JacobSun";
 
-export default function JacobsSuns() {
-  const { myJacobSuns } = useContext(Context);
-
+export default function JacobsSuns({ myJacobSuns }) {
   return (
     <span className="row no-gutters">
       {jacobSuns.map((sun) => (

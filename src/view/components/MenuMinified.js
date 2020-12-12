@@ -8,7 +8,6 @@ import "../styles/MenuMinified.css";
 
 export default function MenuMinified({
   pages,
-  userName = null,
   bgColor,
   variantColor
 }) {
@@ -17,7 +16,7 @@ export default function MenuMinified({
       <NavbarBrand bgColor={bgColor} />
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="col-8">
-        <NavbarItens pages={pages} userName={userName} />
+        <NavbarItens pages={pages} />
       </Navbar.Collapse>
     </Navbar>
   );

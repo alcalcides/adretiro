@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useHistory } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
 
-export default function NavbarItens({ pages, userName }) {
+import { AuthContext } from "../../model/contexts/auth";
+
+export default function NavbarItens({ pages }) {
   const history = useHistory();
+  const { isAuthenticated, user } = useContext(AuthContext);
 
   function goToPage(slug) {
     return (e) => {
@@ -17,12 +20,12 @@ export default function NavbarItens({ pages, userName }) {
       {pages.map((page) => (
         <Nav.Link
           key={page.title}
-          onClick={goToPage(
-            !!userName ? `../${page.slug}/${userName}` : page.slug
-          )}
           className="menuMinifiedItem"
           title={page.title}
           disabled={`/${page.slug}` === document.location.pathname}
+          onClick={goToPage(
+            isAuthenticated ? `../${page.slug}/${user.name}` : page.slug
+          )}
         >
           {page.title}
         </Nav.Link>

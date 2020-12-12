@@ -1,17 +1,13 @@
-import React, { useState, useEffect, createContext } from "react";
+import React, { useState, useEffect } from "react";
 
-import "../../styles/stickersFrame.css";
-import { getUserNameFromURL } from "../../../model/library/utils";
 import MeusFilhosDeJacoFrame from "../../components/MeusFilhosDeJacoFrame";
 
-export const Context = createContext();
+import "../../styles/stickersFrame.css";
 
 export default function MeusFilhosDeJaco() {
-  const [userName, setUserName] = useState("");
   const [myJacobSuns, setMyJacobSuns] = useState([]);
 
   useEffect(() => {
-    setUserName(getUserNameFromURL());
     setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]);
   }, []);
 
@@ -26,10 +22,10 @@ export default function MeusFilhosDeJaco() {
       return alert("Em construção");
     }
   }
-
   return (
-    <Context.Provider value={{ userName, myJacobSuns, handleRewardRequest }}>
-      <MeusFilhosDeJacoFrame />
-    </Context.Provider>
+    <MeusFilhosDeJacoFrame
+      myJacobSuns={myJacobSuns}
+      handleRewardRequest={handleRewardRequest}
+    />
   );
 }

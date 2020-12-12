@@ -13,3 +13,5 @@ This app is like a sticker album. When an user collects all stickers, he can cla
 $ npm install
 $ npm run dev
 ```
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

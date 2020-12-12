@@ -1,5 +1,19 @@
 # Release Notes
 
+### 0.5.20
++ Implements user authentication with React Context
+### Issues 
++ Include log out button in navbar of member pages.
++ Sort member menu and add "log out" and set active color for active page. 
++ Show the user name in some place in member area pages 
++ Scroll page to (0,0) before push to another page
++ [Security] An authenticated user must not access other user by url params manipulation
++ An authenticated session must not access home page by clicking in logo
++ Certify the token is true and correspond with the user in url param
++ Use a spinner to indicate page 'loading'
++ Redirect member pages url error 
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ### 0.5.19
 + Update Readme file 
 ### Issues 
