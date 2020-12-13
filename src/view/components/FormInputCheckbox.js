@@ -14,7 +14,7 @@ export default function FormInputCheckbox({
         id={propertyID}
         value={value}
         name={name}
-        defaultChecked={defaultChecked.includes(value)}
+        defaultChecked={defaultChecked}
       />
       <label className="form-check-label h4 my-2" htmlFor={propertyID}>{value}</label>
     </div>

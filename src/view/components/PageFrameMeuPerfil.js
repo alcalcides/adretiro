@@ -1,20 +1,17 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { membersPages } from "../../model/adminAssets.json";
-import { Context } from "../pages/members/meuPerfil";
 
 import MenuMinified from "./MenuMinified";
 import ProfileUpdate from "./ProfileUpdate";
 import Footer from "./Footer";
 
-export default function MeuPerfilFrame() {
-  const { userName } = useContext(Context);
+export default function PageFrameMeuPerfil() {
 
   return (
     <div id="MeuPerfil">
       <MenuMinified
         pages={membersPages}
-        userName={userName}
         bgColor="dark"
         variantColor="dark"
       />

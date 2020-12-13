@@ -1,27 +1,18 @@
-import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React from "react";
 
 import { membersPages } from "../../model/adminAssets.json";
-import { AuthContext } from "../../model/contexts/auth";
 
 import MenuMinified from "./MenuMinified";
 import JacobsSuns from "./JacobsSuns";
 import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
 
-export default function MeusFilhosDeJacoFrame({
+export default function PageFrameMeusFilhosDeJaco({
   handleRewardRequest,
   myJacobSuns,
+  handleLogOut
 }) {
-  const history = useHistory();
-  const { logOut } = useContext(AuthContext);
 
-  function handleLogOut(e){
-    e.preventDefault();
-    logOut();
-    history.push("/acessar-minha-conta");
-
-  }
 
   return (
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">

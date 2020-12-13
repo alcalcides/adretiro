@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect , useContext } from "react";
+import { useHistory } from "react-router-dom";
 
-import MeusFilhosDeJacoFrame from "../../components/MeusFilhosDeJacoFrame";
+import { AuthContext } from "../../../model/contexts/auth";
+
+import PageFrameMeusFilhosDeJaco from "../../components/PageFrameMeusFilhosDeJaco";
 
 import "../../styles/stickersFrame.css";
 
 export default function MeusFilhosDeJaco() {
   const [myJacobSuns, setMyJacobSuns] = useState([]);
+  const history = useHistory();
+  const { logOut } = useContext(AuthContext);
 
   useEffect(() => {
     setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]);
@@ -22,10 +27,19 @@ export default function MeusFilhosDeJaco() {
       return alert("Em construção");
     }
   }
+
+  function handleLogOut(e){
+    e.preventDefault();
+    logOut();
+    window.scroll(0, 0);
+    history.push("/acessar-minha-conta");
+  }
+  
   return (
-    <MeusFilhosDeJacoFrame
+    <PageFrameMeusFilhosDeJaco
       myJacobSuns={myJacobSuns}
       handleRewardRequest={handleRewardRequest}
+      handleLogOut={handleLogOut}
     />
   );
 }

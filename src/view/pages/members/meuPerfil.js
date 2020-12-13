@@ -1,15 +1,10 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 
-import MeuPerfilFrame from "../../components/MeuPerfilFrame";
-
-export const Context = createContext();
+import PageFrameMeuPerfil from "../../components/PageFrameMeuPerfil";
 
 export default function MeuPerfil() {
-  const userName = useState("userteste");
   
   return (
-    <Context.Provider value={{ userName }}>
-      <MeuPerfilFrame />
-    </Context.Provider>
+    <PageFrameMeuPerfil />
   );
 }

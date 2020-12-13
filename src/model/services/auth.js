@@ -4,8 +4,14 @@ export function signIn() {
       resolve({
         token: "1234567812345678",
         user: {
-            name: "alcides",
-            id: 10
+            id: 10,
+            fullName: "AABN",
+            username: "alcides",
+            birthday: "1990-02-02",
+            mothersFullName: "MCAB",
+            email: "meu@email.teste",
+            phoneNumber: "+5571998765432",
+            enrolledDepartments: ["Senhores", "Crianças"]
         }
       });
     }, 1500);

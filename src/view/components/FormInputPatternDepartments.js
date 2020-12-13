@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import FormInputCheckbox from "./FormInputCheckbox";
 
-export default function FormInputPatternDepartments({ propertyID, defaultChecked}) {
+export default function FormInputPatternDepartments({ alreadyEnrolledDepartments}) {
   const [departmentsList, setDepartmentsList] = useState([]);
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function FormInputPatternDepartments({ propertyID, defaultChecked
           value={department}
           name="departments"
           propertyID={`${department}CheckBox`}
-          defaultChecked={defaultChecked}
+          defaultChecked={alreadyEnrolledDepartments.includes(department)}
         />
       ))}
     </div>

@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useContext } from "react";
+
+import { AuthContext } from "../../model/contexts/auth";
 
 import SignUpForm from "./SignUpForm";
 
 export default function ProfileUpdate() {
-  const [fullName, setFullName] = useState("");
-  const [username, setUsername] = useState("");
-  const [birthday, setBirthday] = useState("");
-  const [mothersFullName, setMothersFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [enrolledDepartments] = useState([]);  
-  const [defaultEnrolledDepartments, setDefaultEnrolledDepartments] = useState([]);  
+  const { user } = useContext(AuthContext);
+
+  const [fullName, setFullName] = useState(user.fullName);
+  const [username, setUsername] = useState(user.username);
+  const [birthday, setBirthday] = useState(user.birthday);
+  const [mothersFullName, setMothersFullName] = useState(user.mothersFullName);
+  const [email, setEmail] = useState(user.email);
+  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
+  const [enrolledDepartments, setEnrolledDepartments] = useState(user.enrolledDepartments);  
   const [password, setPassword] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
@@ -20,7 +23,7 @@ export default function ProfileUpdate() {
       return alert("Aceite os Termos de Uso");
     }
 
-    handleDepartments();
+    setEnrolledDepartments(handleDepartments());
 
     console.log({
       fullName,
@@ -36,16 +39,6 @@ export default function ProfileUpdate() {
 
     alert(`Em construção.`);
   }
-
-  useEffect(() => {
-    setFullName("user teste");
-    setUsername("userteste");
-    setBirthday("1990-02-02");
-    setMothersFullName("minha mãe");
-    setEmail("meu@email.teste");
-    setPhoneNumber("+5571998765432");
-    setDefaultEnrolledDepartments(["Senhores", "Crianças"])
-  }, []);
   
   return (
     <SignUpForm    
@@ -61,8 +54,8 @@ export default function ProfileUpdate() {
       email={email}
       setEmail={setEmail}
       phoneNumber={phoneNumber}
-      defaultChecked={defaultEnrolledDepartments}
       setPhoneNumber={setPhoneNumber}
+      enrolledDepartments={enrolledDepartments}
       password={password}
       setPassword={setPassword}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
@@ -71,11 +64,12 @@ export default function ProfileUpdate() {
   );
 
   function handleDepartments() {
+    let departmentsListUpdate = [];
     const checkedDepartments = document.querySelectorAll('.form-check-input:checked');
     checkedDepartments.forEach(department => {
-      if (!enrolledDepartments.includes(department.value))
-        enrolledDepartments.push(department.value);
+      departmentsListUpdate.push(department.value);
     });
+    return departmentsListUpdate;
   }
 
 }

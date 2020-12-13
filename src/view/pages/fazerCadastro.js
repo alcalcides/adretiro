@@ -1,20 +1,9 @@
 import React from "react";
 
-import { mainPublicPages } from "../../model/adminAssets.json";
+import PageFrameFazerCadastro from "../components/PageFrameFazerCadastro";
 
-import MenuMinified from "../components/MenuMinified";
-import SignUp from "../components/SignUp";
-import Footer from "../components/Footer";
-
-export default function AcessarMinhaConta() {
+export default function FazerCadastro() {
   return (
-    <div id="AcessarMinhaConta">
-      <MenuMinified pages={mainPublicPages} bgColor="light" variantColor="light"/>
-      <h2 className="publicPageTitle">Fazer Cadastro</h2>
-      <main className="row no-gutters justify-content-center">
-        <SignUp />
-      </main>
-      <Footer/>
-    </div>
+    <PageFrameFazerCadastro />
   );
 }
