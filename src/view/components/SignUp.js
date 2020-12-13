@@ -39,30 +39,39 @@ export default function SignUp() {
   return (
     <SignUpForm    
       handleSignUp={handleSignUp}
-      fullName={fullName}
-      setFullName={setFullName}
-      username={username}
-      setUsername={setUsername}
-      birthday={birthday}
-      setBirthday={setBirthday}
-      mothersFullName={mothersFullName}
-      setMothersFullName={setMothersFullName}
-      email={email}
-      setEmail={setEmail}
-      phoneNumber={phoneNumber}
-      setPhoneNumber={setPhoneNumber}
-      password={password}
-      setPassword={setPassword}
+      fullName={fullName} setFullName={setFullName}
+      username={username} setUsername={setUsername}
+      birthday={birthday} setBirthday={setBirthday}
+      mothersFullName={mothersFullName} setMothersFullName={setMothersFullName}
+      email={email} setEmail={setEmail}
+      phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber}
+      password={password} setPassword={setPassword}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
       CTAFormSending="Fazer Cadastro"
     />
   );
 
   function handleDepartments() {
+    includeCheckedDepartments();    
+    removeUncheckedDepartments();
+  }
+  
+  function includeCheckedDepartments() {
     const checkedDepartments = document.querySelectorAll('.form-check-input:checked');
     checkedDepartments.forEach(department => {
-      if (!enrolledDepartments.includes(department.value))
+      if (!enrolledDepartments.includes(department.value)) {
         enrolledDepartments.push(department.value);
+      }
     });
   }
+
+  function removeUncheckedDepartments() {
+    const unCheckedDepartments = document.querySelectorAll('.form-check-input:not(:checked)');
+    unCheckedDepartments.forEach(department => {
+      if (enrolledDepartments.includes(department.value)) {
+        enrolledDepartments.splice(enrolledDepartments.indexOf(department.value), 1);
+      }
+    });
+  }
+
 }

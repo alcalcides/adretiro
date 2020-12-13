@@ -26,7 +26,7 @@ export default function SignUpForm({
   email,
   setEmail,
   phoneNumber,
-  enrolledDepartments = [],
+  alreadyEnrolledDepartments = [],
   setPhoneNumber,
   password,
   setPassword,
@@ -67,7 +67,7 @@ export default function SignUpForm({
       />
       <FormInputPatternDepartments 
         propertyID="departmentsForSignUp" 
-        alreadyEnrolledDepartments={enrolledDepartments}
+        alreadyEnrolledDepartments={alreadyEnrolledDepartments}
       />
       <FormInputPassword
         password={password}

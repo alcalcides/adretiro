@@ -6,7 +6,7 @@ export default function FormInputPatternDepartments({ alreadyEnrolledDepartments
   const [departmentsList, setDepartmentsList] = useState([]);
 
   useEffect(() => {
-    setDepartmentsList(["Senhores", "Senhoras", "Crianças"]); // get this from database
+    setDepartmentsList(["Senhores", "Senhoras", "Crianças"]); // ATTENTION get this from database
   }, []);
 
   return (
