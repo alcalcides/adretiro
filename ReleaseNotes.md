@@ -1,11 +1,25 @@
 # Release Notes
 
+### 0.5.23
++ Sets active color for current page in menu of members
++ Sorts member menu
++ Fixes redirect after sign in
+### Issues 
++ Include log out button in navbar of member pages.
++ Show the user name in some place in member area pages 
++ Scroll page to (0,0) before push to another page
++ [Security] An authenticated user must not access other user by url params manipulation
++ An authenticated session must not access home page by clicking in logo
++ Certify the token is true and correspond with the user in url param
++ Use a spinner to indicate page 'loading'
++ Redirect member pages url error 
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ### 0.5.22
 + Allows leave departments
 ### Issues 
-+ Upadate of departments doesn't work
 + Include log out button in navbar of member pages.
-+ Sort member menu and add "log out" and set active color for active page. 
++ Sort member menu and set active color for active page. 
 + Show the user name in some place in member area pages 
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
@@ -20,7 +34,7 @@
 ### Issues 
 + Upadate of departments doesn't work
 + Include log out button in navbar of member pages.
-+ Sort member menu and add "log out" and set active color for active page. 
++ Sort member menu and set active color for active page. 
 + Show the user name in some place in member area pages 
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
@@ -34,7 +48,7 @@
 + Implements user authentication with React Context
 ### Issues 
 + Include log out button in navbar of member pages.
-+ Sort member menu and add "log out" and set active color for active page. 
++ Sort member menu and set active color for active page. 
 + Show the user name in some place in member area pages 
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation

@@ -21,7 +21,7 @@ export default function LoginUser() {
 
     console.log({ username, password });
     const response = await authenticate({ username, password }); //ATTENTION: send form data
-    history.push(`/meus-filhos-de-jaco/${response.user.name}`); //ATTENTION: check back response
+    history.push(`/meus-filhos-de-jaco/${response.user.username}`); //ATTENTION: check back response
   }
 
 

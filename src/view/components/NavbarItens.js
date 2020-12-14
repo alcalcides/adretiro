@@ -22,9 +22,9 @@ export default function NavbarItens({ pages }) {
           key={page.title}
           className="menuMinifiedItem"
           title={page.title}
-          disabled={`/${page.slug}` === document.location.pathname}
+          disabled={areYouAlreadyHere(page)}
           onClick={goToPage(
-            isAuthenticated ? `../${page.slug}/${user.name}` : page.slug
+            isAuthenticated ? `../${page.slug}/${user.username}` : page.slug
           )}
         >
           {page.title}
@@ -33,3 +33,10 @@ export default function NavbarItens({ pages }) {
     </Nav>
   );
 }
+
+function areYouAlreadyHere(page) {
+  const thisURL = document.location.pathname
+  const thisPage = thisURL.split("/")[1];
+  return page.slug === thisPage;
+}
+

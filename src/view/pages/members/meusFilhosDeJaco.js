@@ -13,7 +13,7 @@ export default function MeusFilhosDeJaco() {
   const { logOut } = useContext(AuthContext);
 
   useEffect(() => {
-    setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]);
+    setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]); // ATTENTION get via api
   }, []);
 
   function handleRewardRequest(e) {
