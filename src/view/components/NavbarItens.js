@@ -1,17 +1,17 @@
 import React, { useContext } from "react";
-import { useHistory } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
+import useGoTo from "../../controller/hooks/useGoTo";
 
 import { AuthContext } from "../../model/contexts/auth";
 
 export default function NavbarItens({ pages }) {
-  const history = useHistory();
+  const { goTo } = useGoTo();
   const { isAuthenticated, user } = useContext(AuthContext);
 
   function goToPage(slug) {
     return (e) => {
       e.preventDefault();
-      history.push(slug);
+      goTo(slug);
     };
   }
 

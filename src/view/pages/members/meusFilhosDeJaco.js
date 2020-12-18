@@ -1,7 +1,7 @@
 import React, { useState, useEffect , useContext } from "react";
-import { useHistory } from "react-router-dom";
 
 import { AuthContext } from "../../../model/contexts/auth";
+import useGoTo from "../../../controller/hooks/useGoTo";
 
 import PageFrameMeusFilhosDeJaco from "../../components/PageFrameMeusFilhosDeJaco";
 
@@ -9,8 +9,8 @@ import "../../styles/stickersFrame.css";
 
 export default function MeusFilhosDeJaco() {
   const [myJacobSuns, setMyJacobSuns] = useState([]);
-  const history = useHistory();
   const { logOut } = useContext(AuthContext);
+  const { goTo } = useGoTo();
 
   useEffect(() => {
     setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]); // ATTENTION get via api
@@ -31,8 +31,7 @@ export default function MeusFilhosDeJaco() {
   function handleLogOut(e){
     e.preventDefault();
     logOut();
-    window.scroll(0, 0);
-    history.push("/acessar-minha-conta");
+    goTo("/");
   }
   
   return (

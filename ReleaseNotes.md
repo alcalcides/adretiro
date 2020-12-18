@@ -1,6 +1,16 @@
 # Release Notes
 
-### 0.5.23
+## 0.5.24
++ Scrolls to the top when change of page
++ Uses personal React Hooks
+### Issues 
++ Include log out button in navbar of member pages.
++ Show the user name in some place in member area pages 
++ Use a spinner to indicate page 'loading'
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
+## 0.5.23
 + Sets active color for current page in menu of members
 + Sorts member menu
 + Fixes redirect after sign in
@@ -9,13 +19,10 @@
 + Show the user name in some place in member area pages 
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
-+ An authenticated session must not access home page by clicking in logo
-+ Certify the token is true and correspond with the user in url param
 + Use a spinner to indicate page 'loading'
-+ Redirect member pages url error 
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 
-### 0.5.22
+## 0.5.22
 + Allows leave departments
 ### Issues 
 + Include log out button in navbar of member pages.
@@ -24,12 +31,11 @@
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
 + An authenticated session must not access home page by clicking in logo
-+ Certify the token is true and correspond with the user in url param
 + Use a spinner to indicate page 'loading'
 + Redirect member pages url error 
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 
-### 0.5.21
+## 0.5.21
 + Refactores html pages structures to be React components
 ### Issues 
 + Upadate of departments doesn't work
@@ -39,12 +45,11 @@
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
 + An authenticated session must not access home page by clicking in logo
-+ Certify the token is true and correspond with the user in url param
 + Use a spinner to indicate page 'loading'
 + Redirect member pages url error 
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 
-### 0.5.20
+## 0.5.20
 + Implements user authentication with React Context
 ### Issues 
 + Include log out button in navbar of member pages.
@@ -53,12 +58,11 @@
 + Scroll page to (0,0) before push to another page
 + [Security] An authenticated user must not access other user by url params manipulation
 + An authenticated session must not access home page by clicking in logo
-+ Certify the token is true and correspond with the user in url param
 + Use a spinner to indicate page 'loading'
 + Redirect member pages url error 
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 
-### 0.5.19
+## 0.5.19
 + Update Readme file 
 ### Issues 
 + Spread React Context method along all app 
@@ -66,7 +70,7 @@
 + Show the user name in some place in member area pages 
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 
-### 0.5.18
+## 0.5.18
 + Uses React Context to page 'Meu Perfil'
 ### Issues
 + Spread React Context method along all app
@@ -74,7 +78,7 @@
 + Show the user name in some place in member area pages
 + [CSS] Reset animated button style after be clicked in mobiles devices
 
-### 0.5.17
+## 0.5.17
 + Uses React Context to page 'Meus Filhos de Jacó'
 ### Issues
 + Spread React Context method along all app
@@ -82,7 +86,7 @@
 + Show the user name in some place in member area pages
 + [CSS] Reset animated button style after be clicked in mobiles devices
 
-### 0.5.16
+## 0.5.16
 + Uses React Context to clean up the code
 ### Issues
 + Spread React Context method along all app
@@ -90,13 +94,13 @@
 + Show the user name in some place in member area pages
 + [CSS] Reset animated button style after be clicked in mobiles devices
 
-### 0.5.15
+## 0.5.15
 + Launches animated buttons to special actions
 ### Issues
 + Reset animated button style after be clicked in mobiles devices
 + Show the user name in some place in member area pages
 
-### 0.5.14
+## 0.5.14
 + Spreads footer along all pages
 ### Issues
 + Show the user name in some place in member area pages

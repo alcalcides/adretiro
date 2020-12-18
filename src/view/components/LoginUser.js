@@ -1,13 +1,13 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import useGoTo from "../../controller/hooks/useGoTo";
 
 import { AuthContext } from "../../model/contexts/auth";
 
 import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUser() {
-  const history = useHistory();
   const { authenticate } = useContext(AuthContext);
+  const { goTo } = useGoTo()
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +21,7 @@ export default function LoginUser() {
 
     console.log({ username, password });
     const response = await authenticate({ username, password }); //ATTENTION: send form data
-    history.push(`/meus-filhos-de-jaco/${response.user.username}`); //ATTENTION: check back response
+    goTo(`/meus-filhos-de-jaco/${response.user.username}`); //ATTENTION: check back response
   }
 
 

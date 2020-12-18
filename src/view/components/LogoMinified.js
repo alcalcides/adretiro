@@ -1,17 +1,17 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import useGoTo from "../../controller/hooks/useGoTo";
 
-import "../styles/logo.css";
-
-import logoMinified from "../images/logo-without-background.svg";
 import { siteName } from "../../model/adminAssets.json";
 
+import logoMinified from "../images/logo-without-background.svg";
+import "../styles/logo.css";
+
 export default function Logo() {
-  const history = useHistory();
+  const { goTo} = useGoTo();
 
   const goToHomePage = (e) => {
     e.preventDefault();
-    history.push("/");
+    goTo("/");
   };
 
   return (
