@@ -1,5 +1,22 @@
 # Release Notes
 
+## 0.5.26
++ Redirects to main member page when clicking in the logo in an authenticated session
+### Issues 
++ Include log out button in navbar of member pages.
++ Show the user name in some place in member area pages 
++ Use a spinner to indicate page 'loading'
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
+## 0.5.25
+### Issues 
++ Include log out button in navbar of member pages.
++ Show the user name in some place in member area pages 
++ Use a spinner to indicate page 'loading'
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ## 0.5.24
 + Scrolls to the top when change of page
 + Uses personal React Hooks
