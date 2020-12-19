@@ -9,7 +9,7 @@ import Footer from "./Footer";
 export default function PageFrameFazerCadastro() {
   return (
     <div id="AcessarMinhaConta">
-      <MenuMinified pages={mainPublicPages} bgColor="light" variantColor="light"/>
+      <MenuMinified pages={mainPublicPages}/>
       <h2 className="publicPageTitle">Fazer Cadastro</h2>
       <main className="row no-gutters justify-content-center">
         <SignUp />

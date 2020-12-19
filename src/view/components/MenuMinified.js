@@ -6,14 +6,10 @@ import NavbarItens from "./NavbarItens";
 
 import "../styles/MenuMinified.css";
 
-export default function MenuMinified({
-  pages,
-  bgColor,
-  variantColor
-}) {
+export default function MenuMinified({ pages }) {
   return (
-    <Navbar collapseOnSelect expand="md" bg={bgColor} variant={variantColor}>
-      <NavbarBrand bgColor={bgColor} />
+    <Navbar collapseOnSelect expand="md" bg="light" variant="light">
+      <NavbarBrand />
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="col-8">
         <NavbarItens pages={pages} />

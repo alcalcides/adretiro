@@ -18,11 +18,7 @@ export default function PageFrameMeusFilhosDeJaco({
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">
       <div className="row no-gutters">
         <div className="col-12">
-          <MenuMinified
-            pages={membersPages}
-            bgColor="dark"
-            variantColor="dark"
-          />
+          <MenuMinified pages={membersPages}/>
         </div>
       </div>
       <div className="row no-gutters">

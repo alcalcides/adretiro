@@ -10,11 +10,7 @@ export default function PageFrameMeuPerfil() {
 
   return (
     <div id="MeuPerfil">
-      <MenuMinified
-        pages={membersPages}
-        bgColor="dark"
-        variantColor="dark"
-      />
+      <MenuMinified pages={membersPages}/>
       <h2 className="memberAreaPageTitle">Meu Perfil</h2>
       <main className="row no-gutters justify-content-center">
         <ProfileUpdate />

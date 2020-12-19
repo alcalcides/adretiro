@@ -9,11 +9,7 @@ import Footer from "./Footer";
 export default function PageFrameSolicitarNovaSenha() {
   return (
     <div id="SolicitarNovaSenha">
-      <MenuMinified
-        pages={mainPublicPages}
-        bgColor="light"
-        variantColor="light"
-      />
+      <MenuMinified pages={mainPublicPages}/>
       <h2 className="publicPageTitle">Solicitar Nova Senha</h2>
       <main className="row no-gutters justify-content-center">
         <ResetPassword />
