@@ -6,13 +6,12 @@ import MenuMinified from "./MenuMinified";
 import JacobsSuns from "./JacobsSuns";
 import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
+import NavMembers from "./NavMembers";
 
 export default function PageFrameMeusFilhosDeJaco({
   handleRewardRequest,
-  myJacobSuns,
-  handleLogOut
+  myJacobSuns
 }) {
-
 
   return (
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">
@@ -21,10 +20,7 @@ export default function PageFrameMeusFilhosDeJaco({
           <MenuMinified pages={membersPages}/>
         </div>
       </div>
-      <div className="row no-gutters">
-        <h2 className="memberAreaPageTitle col-12">Meus filhos de Jacó</h2>
-      </div>
-      <button onClick={handleLogOut}>logout</button>
+      <NavMembers/>
       <main>
         <div className="row no-gutters justify-content-center">
           <div className="col-9" id="stickersFrame">

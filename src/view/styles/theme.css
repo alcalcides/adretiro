@@ -14,7 +14,7 @@ main {
     min-height: 100vh;
 }
 
-.publicPageTitle, .memberAreaPageTitle {
+.publicPageTitle {
     color: lightblue;
     margin: 1rem auto;
     text-align: center;

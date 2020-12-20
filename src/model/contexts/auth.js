@@ -1,6 +1,9 @@
 import React, { createContext, useState, useEffect } from "react";
+import useGoTo from "../../controller/hooks/useGoTo";
 
 import { signIn } from "../services/auth";
+
+
 
 export const AuthContext = createContext();
 
@@ -8,6 +11,7 @@ export default function AuthContextProvider({ children }) {
   const [user, setUser] = useState({});
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const { goTo } = useGoTo();
 
   useEffect(() => {
     const temp = localStorage.getItem("token");
@@ -18,7 +22,7 @@ export default function AuthContextProvider({ children }) {
     }
     setLoading(false);
   }, []);
-
+  
   async function authenticate() {
     const response = await signIn();
     
@@ -28,7 +32,7 @@ export default function AuthContextProvider({ children }) {
     // api.defaults.headers.Authorization = token;
     setUser(response.user);
     localStorage.setItem("user", JSON.stringify(response.user));
-
+    
     console.log(response);
     return response;
   }
@@ -41,8 +45,14 @@ export default function AuthContextProvider({ children }) {
     // api.defaults.headers.Authorization = undefined;
   }
 
+  function handleLogOut(e){
+    e.preventDefault();
+    logOut();
+    goTo("/");
+  }
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated, loading, authenticate, logOut }}>
+    <AuthContext.Provider value={{ user, isAuthenticated, loading, authenticate, handleLogOut }}>
       {children}
     </AuthContext.Provider>
   );

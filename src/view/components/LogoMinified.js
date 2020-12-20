@@ -11,7 +11,7 @@ export default function Logo() {
   const { isAuthenticated, user } = useContext(AuthContext);
   const { goTo } = useGoTo();
 
-  const goToHomePage = (e) => {
+  const handleLogoClick = (e) => {
     e.preventDefault();
 
     if (isAuthenticated) {
@@ -27,8 +27,8 @@ export default function Logo() {
       src={logoMinified}
       id="logo"
       className="img-fluid"
-      alt={siteName}
-      onClick={goToHomePage}
+      alt={`Logo da ${siteName}`}
+      onClick={handleLogoClick}
     />
   );
 }

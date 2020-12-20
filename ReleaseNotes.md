@@ -1,5 +1,13 @@
 # Release Notes
 
+## 0.5.28
++ Shows username in page header
+### Issues 
++ Includes log out button in navbar
++ Use a spinner to indicate page 'loading'
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ## 0.5.27
 + Colors member pages header white
 ### Issues 
