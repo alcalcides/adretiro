@@ -5,6 +5,6 @@ export default function UserName() {
   const { user } = useContext(AuthContext);
 
   return (
-    <span className="h6 mb-0">{user.username}</span>
+    <span className="h6 mb-0 username">{user.username}</span>
   );
 }

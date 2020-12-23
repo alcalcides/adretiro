@@ -20,6 +20,14 @@ main {
     text-align: center;
 }
 
+.userBar {
+    background-image: linear-gradient(to bottom, #000B3A, #3f59c2);
+}
+
+.username {
+    line-height: 1rem;
+}
+
 footer p {
     font-size: 1rem;
 }

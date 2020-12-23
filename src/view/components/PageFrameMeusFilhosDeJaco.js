@@ -7,6 +7,7 @@ import JacobsSuns from "./JacobsSuns";
 import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
 import NavMembers from "./NavMembers";
+import UserBar from "./UserBar";
 
 export default function PageFrameMeusFilhosDeJaco({
   handleRewardRequest,
@@ -15,6 +16,7 @@ export default function PageFrameMeusFilhosDeJaco({
 
   return (
     <div id="MeusFilhosDeJaco" className="container-fluid px-0">
+      <UserBar/>
       <div className="row no-gutters">
         <div className="col-12">
           <MenuMinified pages={membersPages}/>

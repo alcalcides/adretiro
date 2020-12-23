@@ -11,7 +11,7 @@ export default function TitleMembers() {
   }, [getPageRecord]);
 
   return (
-    <h2 className="d-inline">{title}</h2>
+    <h2 className="d-inline my-0 h3">{title}</h2>
   );
 }
 

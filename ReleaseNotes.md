@@ -1,5 +1,15 @@
 # Release Notes
 
+## 0.5.29
++ Launches User Bar
+### Issues
++ Use a spinner to indicate page 'loading'
++ The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
++ Refactores interface of the component "SignUpForm"  to receive an object instead of lots of destructured items. Maybe, this issue will do login form be refactored as well.
++ Remove code repetition among sign up and profile update features. Repeted functions: handleDepartments, includeCheckedDepartments and removeUncheckedDepartments. 
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
+
 ## 0.5.28
 + Shows username in page header
 ### Issues 
