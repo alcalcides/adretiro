@@ -1,9 +1,18 @@
 # Release Notes
-+ Allow users press F5 and dont be redirected to other page
+
+## 0.6.
+### Issues
++ Allow users press F5 and not be redirected to other page
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
++ [MVP] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
++ [MVP] Refactores interface of the component "SignUpForm"  to receive an object instead of lots of destructured items. Maybe, this issue will do login form be refactored as well.
++ [MVP] Remove code repetition among sign up and profile update features. Repeted functions: handleDepartments, includeCheckedDepartments and removeUncheckedDepartments. 
 
 ## 0.6.1
 + Launches structure for page 'Minhas Contribuições'
 ### Issues
++ Allow users press F5 and dont be redirected to other page
 + [Security] An authenticated user must not access other user by url params manipulation
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 + [MVP] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.

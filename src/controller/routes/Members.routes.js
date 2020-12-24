@@ -15,9 +15,9 @@ export default function MembersRoutes() {
       <Route path="/meus-filhos-de-jaco/:username" component={MeusFilhosDeJaco}/>
       <Route path="/minhas-contribuicoes/:username" component={MinhasContribuicoes} />
       <Route path="/meu-perfil/:username" component={MeuPerfil} />
-      <Route path="/">
+      {/* <Route path="/">
         <Redirect to={`/meus-filhos-de-jaco/${user.username}`}/>
-      </Route>
+      </Route> */}
     </>
   );
 }
