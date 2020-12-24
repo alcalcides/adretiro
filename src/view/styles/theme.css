@@ -31,3 +31,5 @@ main {
 footer p {
     font-size: 1rem;
 }
+
+@import "./LoadingProgress.css";

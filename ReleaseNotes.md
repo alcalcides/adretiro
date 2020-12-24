@@ -1,5 +1,14 @@
 # Release Notes
 
+## 0.6.0
++ Uses a spinner like default progress bar
+### Issues
++ [Security] An authenticated user must not access other user by url params manipulation
++ [CSS] Reset animated button style after be clicked in mobiles devices 
++ [MVP] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
++ [MVP] Refactores interface of the component "SignUpForm"  to receive an object instead of lots of destructured items. Maybe, this issue will do login form be refactored as well.
++ [MVP] Remove code repetition among sign up and profile update features. Repeted functions: handleDepartments, includeCheckedDepartments and removeUncheckedDepartments. 
+
 ## 0.5.29
 + Launches User Bar
 ### Issues

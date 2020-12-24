@@ -1,0 +1,7 @@
+.LoadingProgress {
+    min-height: 100vh;
+}
+ 
+.LoadingProgress div.spinner-border {
+    box-shadow: 0 0 1rem wheat;
+}
