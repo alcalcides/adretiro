@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { membersPages } from "../../model/adminAssets.json";
 
@@ -7,19 +7,25 @@ import MenuMinified from "./MenuMinified";
 import NavMembers from "./NavMembers";
 import Footer from "./Footer";
 import ButtonAnimated from "./ButtonAnimated";
+import Contributions from "./Contribuitions";
+import { numberToMoney } from "../../model/library/niceNumbers";
 
 export default function PageFrameMinhasContribuicoes() {
+  const [accountBallance] = useState(10.0);
+
   return (
     <div id="MeuPerfil">
       <UserBar />
       <MenuMinified pages={membersPages} />
       <NavMembers />
       <main className="row no-gutters px-3">
-        <section className="bg-success col-12 px-2">
-          <p>status, quando, quanto, quem recebeu</p>
+        <section className="col-12">
+          <Contributions/>
+        </section>
+        <section className="col-12 d-flex justify-content-center align-items-center my-3">
+          <p className="mb-0">Saldo: {numberToMoney(accountBallance)}</p>
         </section>
         <section className="col-12">
-          <p className="row no-gutters justify-content-center">Saldo: R$ 0</p>
           <div className="row no-gutters justify-content-center">
             <ButtonAnimated
               callToAction="Liberar Senhas"
@@ -34,3 +40,5 @@ export default function PageFrameMinhasContribuicoes() {
     </div>
   );
 }
+
+

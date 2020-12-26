@@ -14,6 +14,6 @@ export function signIn() {
             enrolledDepartments: ["Senhores", "Crianças"]
         }
       });
-    }, 1500);
+    }, 10);
   });
 }

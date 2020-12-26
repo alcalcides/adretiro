@@ -1,8 +1,12 @@
 # Release Notes
 
-## 0.6.
+## 0.7.0
++ Launches page 'Minhas contribuicoes'
++ Delete unused function in library utils.js
++ Launches library niceNumbers to deal with currency
 ### Issues
 + Allow users press F5 and not be redirected to other page
++ Fix semantic html tags in components of type 'PageFrameX'. Use <section> instead of <div>.
 + [Security] An authenticated user must not access other user by url params manipulation
 + [CSS] Reset animated button style after be clicked in mobiles devices 
 + [MVP] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
