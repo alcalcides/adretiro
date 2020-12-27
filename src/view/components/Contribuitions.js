@@ -7,7 +7,7 @@ export default function Contributions() {
   const [contributions, setContributions] = useState([]);
 
   useEffect(() => {
-    setContributions(JSON.parse(contributionsExemple));
+    setContributions(JSON.parse(contributionsExemple)); //ATTENTION server call
   }, []);
 
   return (
