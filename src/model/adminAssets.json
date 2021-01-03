@@ -4,7 +4,8 @@
     { "title": "Página Inicial", "slug": "" },
     { "title": "Fazer Cadastro", "slug": "fazer-cadastro" },
     { "title": "Acessar Minha Conta", "slug": "acessar-minha-conta" },
-    { "title": "Solicitar Nova Senha", "slug": "solicitar-nova-senha" }
+    { "title": "Solicitar Nova Senha", "slug": "solicitar-nova-senha" },
+    { "title": "Acesso Administrativo", "slug": "acesso-administrativo" }
   ],
   "membersPages": [
     { "title": "Meus Filhos de Jacó", "slug": "meus-filhos-de-jaco" },
