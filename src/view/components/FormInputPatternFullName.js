@@ -10,7 +10,7 @@ export default function FormInputPatternFullName({
   return (
     <FormInputText
       title="Nome Completo"
-      tip="Seu nome de identificação no sistema."
+      tip="Seu nome completo sem abreviações."
       placeholder="Nome Completo da Silva"
       content={content}
       setContent={setContent}

@@ -1,12 +1,13 @@
 {
   "name": "mais-retiro",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "private": true,
   "author": {
     "name": "Alcides Augusto Bezerra Neto",
     "email": "alcalcides@hotmail.com"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.3",
     "react": "^16.14.0",
     "react-bootstrap": "^1.4.0",
