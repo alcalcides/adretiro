@@ -8,7 +8,7 @@ export function getServer() {
       ? servers.review
       : dns === "adretiro-dev.herokuapp.com"
       ? servers.review
-      : dns === "adretiro-dev.herokuapp.com"
+      : dns === "adretiro.com.br"
       ? servers.production
       : null;
 
