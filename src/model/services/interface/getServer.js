@@ -5,7 +5,7 @@ export function getServer() {
 
   const server =
     dns === "localhost"
-      ? servers.review
+      ? servers.development
       : dns === "adretiro-dev.herokuapp.com"
       ? servers.review
       : dns === "adretiro.com.br"
