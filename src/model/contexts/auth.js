@@ -1,9 +1,12 @@
 import React, { createContext, useState, useEffect } from "react";
 import useGoTo from "../../controller/hooks/useGoTo";
-import { signIn } from "../services/auth";
+import jwt_decode from "jwt-decode";
+import { signIn } from "../services/signIn";
 import api from "../services/interface/api";
 
 export const AuthContext = createContext();
+
+export const STORAGE_KEY_TOKEN = "token@adretiro";
 
 export default function AuthContextProvider({ children }) {
   const [user, setUser] = useState({});
@@ -12,47 +15,51 @@ export default function AuthContextProvider({ children }) {
   const { goTo } = useGoTo();
 
   useEffect(() => {
-    const temp = localStorage.getItem("token");
+    const temp = JSON.parse(localStorage.getItem(STORAGE_KEY_TOKEN));
     if (temp) {
-      setIsAuthenticated(true); // ATTENTION SECURITY deveria checkar o token
-      setUser(JSON.parse(localStorage.getItem("user")));
-      // api.defaults.headers.Authorization = 'Bearer ' + response.token;
+      setIsAuthenticated(true);
+      authenticateFastly(localStorage.getItem(STORAGE_KEY_TOKEN).split(" ")[1]);
     }
     setLoading(false);
   }, []);
 
-  async function authenticate() {
-    const response = await signIn();
+  async function authenticate({ username, password }) {
+    try {
+      const response = await signIn({ username, password });
+      if (response.success === false) {
+        throw new Error(response.reason);
+      }
 
-    setIsAuthenticated(true); // ATTENTION SECURITY
-    const token = `Bearer ${response.token}`;
-    localStorage.setItem("token", JSON.stringify(token));
-    // api.defaults.headers.Authorization = token;
-    setUser(response.user);
-    localStorage.setItem("user", JSON.stringify(response.user));
-
-    console.log(response);
-    return response;
+      return await authenticateFastly(response.data.token);
+    } catch (error) {
+      return error;
+    }
   }
 
-  async function authenticateFastly(token, user) {
-    setIsAuthenticated(true);
+  async function authenticateFastly(token) {
+    try {
+      setIsAuthenticated(true);
 
-    localStorage.setItem("token", JSON.stringify(`Bearer ${token}`));
-    api.defaults.headers.Authorization = `Bearer ${token}`;
+      localStorage.setItem(
+        STORAGE_KEY_TOKEN,
+        JSON.stringify(`Bearer ${token}`)
+      );
+      api.defaults.headers.Authorization = `Bearer ${token}`;
 
-    setUser(user);
-    localStorage.setItem("user", JSON.stringify(user));
+      const decoded = await jwt_decode(token);
+      setUser(decoded);
 
-    return { success: true };
+      return { success: true };
+    } catch (error) {
+      return { success: false };
+    }
   }
 
   function logOut() {
     setIsAuthenticated(false);
     setUser({});
-    localStorage.removeItem("token");
-    localStorage.removeItem("user");
-    // api.defaults.headers.Authorization = undefined;
+    localStorage.removeItem(STORAGE_KEY_TOKEN);
+    api.defaults.headers.Authorization = null;
   }
 
   function handleLogOut(e) {

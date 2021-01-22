@@ -1,7 +1,7 @@
 import api from "./api";
 
 export default async function post(route, data = null, config = null) {
-  return await api
+  return api
     .post(route, data, config)
     .then((value) => {
       return value;

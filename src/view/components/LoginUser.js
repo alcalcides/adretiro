@@ -7,7 +7,7 @@ import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUser() {
   const { authenticate } = useContext(AuthContext);
-  const { goTo } = useGoTo()
+  const { goTo } = useGoTo();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,11 +19,19 @@ export default function LoginUser() {
       return alert("Aceite os Termos de Uso");
     }
 
-    console.log({ username, password });
-    const response = await authenticate({ username, password }); //ATTENTION: send form data
-    goTo(`/meus-filhos-de-jaco/${response.user.username}`); //ATTENTION: check back response
-  }
+    try {
+      const response = await authenticate({ username, password });
+      if(response.success !== true){
+        throw new Error(response)
+      }
 
+      goTo(`/meus-filhos-de-jaco/${username}`);
+      
+    } catch (error) {
+      alert("Usuário ou senha incorretos");
+      goTo(`/acessar-minha-conta`);
+    }
+  }
 
   return (
     <LoginUserForm

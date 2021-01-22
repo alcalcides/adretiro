@@ -31,10 +31,14 @@ export default function SignUpForm({
   password,
   setPassword,
   setHasAcceptedTermsOfUse,
-  CTAFormSending
+  CTAFormSending,
 }) {
   return (
-    <form id="SignUpForm" className="col-10 col-md-6 publicForms" onSubmit={handleSignUp}>
+    <form
+      id="SignUpForm"
+      className="col-10 col-md-6 publicForms"
+      onSubmit={handleSignUp}
+    >
       <FormInputPatternFullName
         content={fullName}
         setContent={setFullName}
@@ -65,8 +69,8 @@ export default function SignUpForm({
         setContent={setPhoneNumber}
         propertyID="phoneNumberForSignUp"
       />
-      <FormInputPatternDepartments 
-        propertyID="departmentsForSignUp" 
+      <FormInputPatternDepartments
+        propertyID="departmentsForSignUp"
         alreadyEnrolledDepartments={alreadyEnrolledDepartments}
       />
       <FormInputPassword

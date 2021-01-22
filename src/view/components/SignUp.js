@@ -45,7 +45,7 @@ export default function SignUp() {
       alert(res.reason.response.data.tip);
     } else {
       console.log("contributor registered", res);
-      authenticateFastly(res.data.token, { username });
+      authenticateFastly(res.data.token);
       history.push(`/meus-filhos-de-jaco/${username}`);
     }
   }
