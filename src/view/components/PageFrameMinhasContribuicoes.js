@@ -8,7 +8,7 @@ import NavMembers from "./NavMembers";
 import Footer from "./Footer";
 import ButtonAnimated from "./ButtonAnimated";
 import Contributions from "./Contribuitions";
-import { numberToMoney } from "../../model/library/niceNumbers";
+import numberToMoney from "../../model/library/niceNumbers";
 
 export default function PageFrameMinhasContribuicoes() {
   const [accountBallance] = useState(10.0);

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { createContributor } from "../../model/services/createContributor";
 import { AuthContext } from "../../model/contexts/auth";
+import getFilledFields from "../../model/library/getFilledFields";
 
 import SignUpForm from "./SignUpForm";
 
@@ -27,7 +28,7 @@ export default function SignUp() {
 
     handleDepartments();
 
-    const data = {
+    const dataLiteral = {
       fullName,
       username,
       birthday,
@@ -38,6 +39,8 @@ export default function SignUp() {
       password,
       hasAcceptedTermsOfUse,
     };
+
+    const data = getFilledFields(dataLiteral)
 
     const res = await createContributor(data);
     if (res.success === false) {
