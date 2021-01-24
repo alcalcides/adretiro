@@ -5,9 +5,9 @@ import { AuthContext } from "../../model/contexts/auth";
 
 import LoginUserForm from "./LoginUserForm";
 
-export default function LoginUser() {
-  const { authenticate } = useContext(AuthContext);
-  const { goTo } = useGoTo()
+export default function LoginUserAdmin() {
+  const { authenticateAdmin } = useContext(AuthContext);
+  const { goTo } = useGoTo();
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -19,11 +19,14 @@ export default function LoginUser() {
       return alert("Aceite os Termos de Uso");
     }
 
-    console.log({ username, password });
-    const response = await authenticate({ username, password }); //ATTENTION: send form data
-    goTo(`/admin/painel-central/${response.user.username}`); //ATTENTION: check back response
+    try {
+      await authenticateAdmin({ username, password });
+      goTo(`/painel-central/${username}`);
+    } catch (error) {
+      alert("Usuário ou senha incorretos");
+      goTo(`/acesso-administrativo`);
+    }
   }
-
 
   return (
     <LoginUserForm

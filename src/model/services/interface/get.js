@@ -7,6 +7,6 @@ export default async function get(route) {
       return value;
     })
     .catch((reason) => {
-      return { success: false, reason };
+      return new Error(reason);
     });
 }

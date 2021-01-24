@@ -7,6 +7,6 @@ export default async function post(route, data = null, config = null) {
       return value;
     })
     .catch((reason) => {
-      return { success: false, reason };
+      throw new Error(reason);
     });
 }

@@ -11,6 +11,6 @@ export async function signIn(data) {
     return response;
     
   } catch (error) {
-    return error;
+    throw new Error(error);
   }
 }

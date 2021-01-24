@@ -13,6 +13,9 @@
     { "title": "Minhas Senhas", "slug": "minhas-senhas" },
     { "title": "Meu Perfil", "slug": "meu-perfil" }
   ],
+  "adminPages": [
+    { "title": "Painel Central", "slug": "painel-central" }
+  ],
   "jacobSuns": [
     "gade",
     "asser",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 import Home from "../../view/pages/home";
 import AcessarMinhaConta from "../../view/pages/acessarMinhaConta";
@@ -15,7 +15,6 @@ export default function PublicRoutes() {
       <Route path="/fazer-cadastro" component={FazerCadastro} />
       <Route path="/solicitar-nova-senha" component={SolicitarNovaSenha} />
       <Route path="/acesso-administrativo" component={AcessoAdministrativo} />
-      <Redirect path="*" to="/" />
     </>
   );
 }

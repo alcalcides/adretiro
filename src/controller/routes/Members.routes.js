@@ -1,7 +1,5 @@
-import React, { useContext } from "react";
-import { Route, Redirect } from "react-router-dom";
-
-import { AuthContext } from "../../model/contexts/auth";
+import React from "react";
+import { Route } from "react-router-dom";
 
 import MeusFilhosDeJaco from "../../view/pages/members/meusFilhosDeJaco";
 import MeuPerfil from "../../view/pages/members/meuPerfil";
@@ -9,7 +7,6 @@ import MinhasContribuicoes from "../../view/pages/members/minhasContribuicoes";
 import MinhasSenhas from "../../view/pages/members/minhasSenhas";
 
 export default function MembersRoutes() {
-  const { user } = useContext(AuthContext);
 
   return (
     <>
@@ -17,9 +14,6 @@ export default function MembersRoutes() {
       <Route path="/minhas-contribuicoes/:username" component={MinhasContribuicoes} />
       <Route path="/minhas-senhas/:username" component={MinhasSenhas} />
       <Route path="/meu-perfil/:username" component={MeuPerfil} />
-      <Route path="/">
-        <Redirect to={`/meus-filhos-de-jaco/${user.username}`}/>
-      </Route>
     </> 
   );
 }

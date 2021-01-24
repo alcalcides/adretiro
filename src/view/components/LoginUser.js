@@ -24,7 +24,7 @@ export default function LoginUser() {
       if(response.success !== true){
         throw new Error(response)
       }
-
+      
       goTo(`/meus-filhos-de-jaco/${username}`);
       
     } catch (error) {
