@@ -1,21 +1,36 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 import { AuthContext } from "../../model/contexts/auth";
+import { getPeople } from "../../model/services/getPeople";
 
 import SignUpForm from "./SignUpForm";
 
 export default function ProfileUpdate() {
   const { user } = useContext(AuthContext);
 
-  const [fullName, setFullName] = useState(user.fullName);
-  const [username, setUsername] = useState(user.username);
-  const [birthday, setBirthday] = useState(user.birthday);
-  const [mothersFullName, setMothersFullName] = useState(user.mothersFullName);
-  const [email, setEmail] = useState(user.email);
-  const [phoneNumber, setPhoneNumber] = useState(user.phoneNumber);
-  const [enrolledDepartments] = useState(user.enrolledDepartments);  
+  const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [mothersFullName, setMothersFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [enrolledDepartments] = useState([]);
   const [password, setPassword] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
+
+  useEffect(() => {
+    getPeople(user.id)
+      .then((data) => {
+        setFullName(data.full_name);
+        setUsername(data.username);
+        if (data.birthday) setBirthday(data.birthday.split("T")[0]);
+        if (data.mothers_full_name) setMothersFullName(data.mothers_full_name);
+        if (data.email) setEmail(data.email);
+        if (data.whatsapp) setPhoneNumber(data.whatsapp);
+      })
+      .catch((err) => alert(err));
+    // ATTENTION: get the departments
+  }, [user]);
 
   function handleSignUpUpdate(e) {
     e.preventDefault();
@@ -39,44 +54,57 @@ export default function ProfileUpdate() {
 
     alert(`Em construção.`);
   }
-  
+
   return (
-    <SignUpForm    
+    <SignUpForm
       handleSignUp={handleSignUpUpdate}
-      fullName={fullName} setFullName={setFullName}
-      username={username} setUsername={setUsername}
-      birthday={birthday} setBirthday={setBirthday}
-      mothersFullName={mothersFullName} setMothersFullName={setMothersFullName}
-      email={email} setEmail={setEmail}
-      phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber}
-      alreadyEnrolledDepartments={enrolledDepartments} 
-      password={password} setPassword={setPassword}
+      fullName={fullName}
+      setFullName={setFullName}
+      username={username}
+      setUsername={setUsername}
+      birthday={birthday}
+      setBirthday={setBirthday}
+      mothersFullName={mothersFullName}
+      setMothersFullName={setMothersFullName}
+      email={email}
+      setEmail={setEmail}
+      phoneNumber={phoneNumber}
+      setPhoneNumber={setPhoneNumber}
+      alreadyEnrolledDepartments={enrolledDepartments}
+      password={password}
+      setPassword={setPassword}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
       CTAFormSending="Salvar Alterações"
-    />    
+    />
   );
 
   function handleDepartments() {
-    includeCheckedDepartments();    
+    includeCheckedDepartments();
     removeUncheckedDepartments();
   }
-  
+
   function includeCheckedDepartments() {
-    const checkedDepartments = document.querySelectorAll('.form-check-input:checked');
-    checkedDepartments.forEach(department => {
+    const checkedDepartments = document.querySelectorAll(
+      ".form-check-input:checked"
+    );
+    checkedDepartments.forEach((department) => {
       if (!enrolledDepartments.includes(department.value)) {
         enrolledDepartments.push(department.value);
       }
     });
   }
-  
+
   function removeUncheckedDepartments() {
-    const unCheckedDepartments = document.querySelectorAll('.form-check-input:not(:checked)');
-    unCheckedDepartments.forEach(department => {
+    const unCheckedDepartments = document.querySelectorAll(
+      ".form-check-input:not(:checked)"
+    );
+    unCheckedDepartments.forEach((department) => {
       if (enrolledDepartments.includes(department.value)) {
-        enrolledDepartments.splice(enrolledDepartments.indexOf(department.value), 1);
+        enrolledDepartments.splice(
+          enrolledDepartments.indexOf(department.value),
+          1
+        );
       }
     });
   }
-
 }

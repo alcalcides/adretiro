@@ -16,10 +16,9 @@ export default function AuthContextProvider({ children }) {
   const { goTo } = useGoTo();
 
   useEffect(() => {
-    const temp = JSON.parse(localStorage.getItem(STORAGE_KEY_TOKEN));
+    const temp = localStorage.getItem(STORAGE_KEY_TOKEN);
     if (temp) {
-      const token = localStorage.getItem(STORAGE_KEY_TOKEN).split(" ")[1];
-
+      const token = temp.split(" ")[1].replace('"', "");
       try {
         authenticateFastlyAdmin(token);
       } catch (error) {
@@ -55,8 +54,8 @@ export default function AuthContextProvider({ children }) {
   async function authenticateFastly(token) {
     try {
       const decoded = await jwt_decode(token);
-      
-      // ATTENTION: these lines should to be a function. 
+
+      // ATTENTION: these lines should to be a function.
       // I did this way to avoid problems with useEffect constraints
       setIsAuthenticated(true);
       localStorage.setItem(
