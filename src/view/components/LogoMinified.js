@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
 import useGoTo from "../../controller/hooks/useGoTo";
 
 import { siteName } from "../../model/adminAssets.json";
@@ -8,14 +9,15 @@ import logoMinified from "../images/logo-without-background.svg";
 import "../styles/logo.css";
 
 export default function Logo() {
-  const { isAuthenticated, user } = useContext(AuthContext);
+  const { username } = useParams();
+  const { isAuthenticated } = useContext(AuthContext);
   const { goTo } = useGoTo();
 
   const handleLogoClick = (e) => {
     e.preventDefault();
 
     if (isAuthenticated) {
-      goTo(`/meus-filhos-de-jaco/${user.username}`);
+      goTo(`/meus-filhos-de-jaco/${username}`);
     } 
     else {
       goTo("/");

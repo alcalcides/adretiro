@@ -1,12 +1,14 @@
 import React, { useContext } from "react";
 import Nav from "react-bootstrap/Nav";
+import { useParams } from "react-router-dom";
 import useGoTo from "../../controller/hooks/useGoTo";
 
 import { AuthContext } from "../../model/contexts/auth";
 
 export default function NavbarItens({ pages }) {
   const { goTo } = useGoTo();
-  const { isAuthenticated, user } = useContext(AuthContext);
+  const { username } = useParams();
+  const { isAuthenticated } = useContext(AuthContext);
 
   function goToPage(slug) {
     return (e) => {
@@ -24,7 +26,7 @@ export default function NavbarItens({ pages }) {
           title={page.title}
           disabled={areYouAlreadyHere(page)}
           onClick={goToPage(
-            isAuthenticated ? `../${page.slug}/${user.username}` : page.slug
+            isAuthenticated ? `../${page.slug}/${username}` : page.slug
           )}
         >
           {page.title}
@@ -35,8 +37,7 @@ export default function NavbarItens({ pages }) {
 }
 
 function areYouAlreadyHere(page) {
-  const thisURL = document.location.pathname
+  const thisURL = document.location.pathname;
   const thisPage = thisURL.split("/")[1];
   return page.slug === thisPage;
 }
-
