@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 
 import { AuthContext } from "../../model/contexts/auth";
+import { getEnrollmentsOf } from "../../model/services/getEnrollmentsOf";
 import { getPeople } from "../../model/services/getPeople";
 
 import SignUpForm from "./SignUpForm";
@@ -14,7 +15,7 @@ export default function ProfileUpdate() {
   const [mothersFullName, setMothersFullName] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
-  const [enrolledDepartments] = useState([]);
+  const [enrolledDepartments, setEnrolledDepartment] = useState([]);
   const [password, setPassword] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
@@ -29,7 +30,10 @@ export default function ProfileUpdate() {
         if (data.whatsapp) setPhoneNumber(data.whatsapp);
       })
       .catch((err) => alert(err));
-    // ATTENTION: get the departments
+
+    getEnrollmentsOf(user.id)
+      .then((res) => setEnrolledDepartment(res))
+      .catch((err) => alert(err));
   }, [user]);
 
   function handleSignUpUpdate(e) {

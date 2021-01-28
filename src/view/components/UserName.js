@@ -1,8 +1,8 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import React, { useContext } from "react";
+import { AuthContext } from "../../model/contexts/auth";
 
 export default function UserName() {
-  const { username } = useParams();
+  const { user } = useContext(AuthContext);
 
-  return <span className="h6 mb-0 username">{username}</span>;
+  return <span className="h6 mb-0 username">{user.username}</span>;
 }

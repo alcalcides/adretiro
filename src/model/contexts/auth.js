@@ -3,6 +3,8 @@ import useGoTo from "../../controller/hooks/useGoTo";
 import jwt_decode from "jwt-decode";
 import { signIn } from "../services/signIn";
 import api from "../services/interface/api";
+import Errors from "../Errors";
+import { mainPublicPages } from "../adminAssets.json";
 
 export const AuthContext = createContext();
 
@@ -16,17 +18,37 @@ export default function AuthContextProvider({ children }) {
   const { goTo } = useGoTo();
 
   useEffect(() => {
-    const temp = localStorage.getItem(STORAGE_KEY_TOKEN);
-    if (temp) {
-      const token = temp.split(" ")[1].replace('"', "");
+    async function getAuthentication() {
       try {
-        authenticateFastlyAdmin(token);
+        const slug1 = window.location.pathname.split("/")[1];
+        const isPublic = mainPublicPages.find((value) => value.slug === slug1);
+        if (!isPublic) {
+          const temp = localStorage.getItem(STORAGE_KEY_TOKEN);
+          if (temp === null) {
+            throw new Error(Errors.tokenLost);
+          }
+  
+          const token = temp.split(" ")[1].replace('"', "");
+          const decoded = await jwt_decode(token);
+          switch (decoded.sub) {
+            case "manager":
+              await authenticateFastlyAdmin(token);
+              break;
+            case "contributor":
+              await authenticateFastly(token);
+              break;
+            default:
+              throw new Error(Errors.tokenError);
+          }
+        }
       } catch (error) {
-        authenticateFastly(token);
+        alert(error);
+      } finally {
+        setLoading(false);
       }
     }
-
-    setLoading(false);
+    
+    getAuthentication();
   }, []);
 
   async function authenticate({ username, password }) {
@@ -38,7 +60,7 @@ export default function AuthContextProvider({ children }) {
       }
       return await authenticateFastly(response.data.token);
     } catch (error) {
-      throw new Error(error);
+      return new Error(error);
     }
   }
 
@@ -47,7 +69,7 @@ export default function AuthContextProvider({ children }) {
       const response = await signIn({ username, password });
       return await authenticateFastlyAdmin(response.data.token);
     } catch (error) {
-      throw new Error(error);
+      return new Error(error);
     }
   }
 
@@ -68,7 +90,7 @@ export default function AuthContextProvider({ children }) {
 
       return { success: true };
     } catch (error) {
-      throw new Error(error);
+      return new Error(error);
     }
   }
 
@@ -76,7 +98,7 @@ export default function AuthContextProvider({ children }) {
     try {
       const decoded = await jwt_decode(token);
       if (decoded.sub !== "manager") {
-        throw new Error("Rever credenciais");
+        throw new Error(Errors.credentialError);
       }
 
       setIsAuthenticated(true);
@@ -91,7 +113,7 @@ export default function AuthContextProvider({ children }) {
 
       return { success: true };
     } catch (error) {
-      throw new Error(error);
+      return new Error(error);
     }
   }
 
