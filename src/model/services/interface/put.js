@@ -1,8 +1,8 @@
 import api from "./api";
 
-export default async function post(route, data = null, config = null) {
+export default async function put(route, data = null, config = null) {
   try {
-    const response = await api.post(route, data, config);
+    const response = await api.put(route, data, config);
     return response;
   } catch (reason) {
     if (reason.response.data) return reason.response.data;

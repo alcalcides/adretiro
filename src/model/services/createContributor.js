@@ -1,5 +1,10 @@
 import post from "./interface/post";
 
 export async function createContributor(data) {
-  return await post("contributors", data);
+  try {
+    const response = await post("/contributors", data);
+    return response;
+  } catch (reason) {
+    throw new Error(reason);
+  }
 }

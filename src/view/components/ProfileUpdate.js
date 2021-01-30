@@ -1,14 +1,18 @@
 import React, { useState, useContext, useEffect } from "react";
+import useGoTo from "../../controller/hooks/useGoTo";
 
-import { AuthContext } from "../../model/contexts/auth";
+import { AuthContext, STORAGE_KEY_TOKEN } from "../../model/contexts/auth";
+import getFilledFields from "../../model/library/getFilledFields";
 import { getEnrollmentsOf } from "../../model/services/getEnrollmentsOf";
 import { getPeople } from "../../model/services/getPeople";
+import { updateContributor } from "../../model/services/updateContributor";
 
 import SignUpForm from "./SignUpForm";
 
 export default function ProfileUpdate() {
   const { user } = useContext(AuthContext);
-
+  const { goTo } = useGoTo();
+    
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -36,7 +40,7 @@ export default function ProfileUpdate() {
       .catch((err) => alert(err));
   }, [user]);
 
-  function handleSignUpUpdate(e) {
+  async function handleSignUpUpdate(e) {
     e.preventDefault();
     if (!hasAcceptedTermsOfUse) {
       return alert("Aceite os Termos de Uso");
@@ -44,7 +48,7 @@ export default function ProfileUpdate() {
 
     handleDepartments();
 
-    console.log({
+    const dataLiteral = {
       fullName,
       username,
       birthday,
@@ -54,9 +58,26 @@ export default function ProfileUpdate() {
       enrolledDepartments,
       password,
       hasAcceptedTermsOfUse,
-    });
+    };
+    const data = getFilledFields(dataLiteral);
 
-    alert(`Em construção.`);
+    try {
+      const response = await updateContributor(data);
+      if (response.success === false) throw new Error(response.message);
+      else {
+        localStorage.setItem(
+          STORAGE_KEY_TOKEN,
+          JSON.stringify(`Bearer ${response.data.token}`)
+        );
+        alert("Dados atualizados");
+        goTo(window.location.pathname);
+      }
+    } catch (reason) {
+      console.log(reason);
+      alert(reason);
+    } finally {
+      setPassword("");
+    }
   }
 
   return (

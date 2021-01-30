@@ -11,6 +11,7 @@ export default function FormInputPassword({ password, setPassword, labelContent,
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="**************"
+        required
       />
     </div>
   );

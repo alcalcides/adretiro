@@ -1,14 +1,14 @@
 import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
 import { createContributor } from "../../model/services/createContributor";
 import { AuthContext } from "../../model/contexts/auth";
 import getFilledFields from "../../model/library/getFilledFields";
 
 import SignUpForm from "./SignUpForm";
+import useGoTo from "../../controller/hooks/useGoTo";
 
 export default function SignUp() {
   const { authenticateFastly } = useContext(AuthContext);
-  const history = useHistory();
+  const { goTo } = useGoTo();
 
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
@@ -40,16 +40,18 @@ export default function SignUp() {
       hasAcceptedTermsOfUse,
     };
 
-    const data = getFilledFields(dataLiteral)
-
-    const res = await createContributor(data);
-    if (res.success === false) {
-      console.log("contributor not registered");
-      alert(res.reason.response.data.tip);
-    } else {
-      console.log("contributor registered", res);
-      authenticateFastly(res.data.token);
-      history.push(`/meus-filhos-de-jaco/${username}`);
+    const data = getFilledFields(dataLiteral);
+    try {
+      const response = await createContributor(data);
+      if (response.success === false) throw new Error(response.message);
+      else {
+        authenticateFastly(response.data.token);
+        goTo(`/meus-filhos-de-jaco/${username}`);
+      }
+    } catch (reason) {
+      setPassword("");
+      console.log(reason);
+      alert(reason);
     }
   }
 
