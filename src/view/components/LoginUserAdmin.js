@@ -6,7 +6,7 @@ import { AuthContext } from "../../model/contexts/auth";
 import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUserAdmin() {
-  const { authenticateAdmin } = useContext(AuthContext);
+  const { authenticateAdmin, logOut } = useContext(AuthContext);
   const { goTo } = useGoTo();
 
   const [username, setUsername] = useState("");
@@ -20,10 +20,15 @@ export default function LoginUserAdmin() {
     }
 
     try {
-      await authenticateAdmin({ username, password });
+      const response = await authenticateAdmin({ username, password });
+      if (response.success !== true) {
+        throw new Error(response);
+      }
+
       goTo(`/painel-central/${username}`);
     } catch (error) {
-      alert("Usuário ou senha incorretos");
+      logOut();
+      alert(error);
       goTo(`/acesso-administrativo`);
     }
   }

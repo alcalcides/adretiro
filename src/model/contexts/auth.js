@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode";
 import { signIn } from "../services/signIn";
 import api from "../services/interface/api";
 import Errors from "../Errors";
-import { mainPublicPages } from "../adminAssets.json";
+import { adminPages, membersPages } from "../adminAssets.json";
 
 export const AuthContext = createContext();
 
@@ -18,103 +18,73 @@ export default function AuthContextProvider({ children }) {
   const { goTo } = useGoTo();
 
   useEffect(() => {
-    async function getAuthentication() {
+    async function getAuthorization() {
       try {
-        const slug1 = window.location.pathname.split("/")[1];
-        const isPublic = mainPublicPages.find((value) => value.slug === slug1);
-        if (!isPublic) {
+        const slugTemp = window.location.pathname.split("/")[1];
+
+        const isMemberArea = membersPages.find(
+          (value) => value.slug === slugTemp
+        );
+        const isAdminArea = adminPages.find((value) => value.slug === slugTemp);
+
+        if (isMemberArea || isAdminArea) {
           const temp = localStorage.getItem(STORAGE_KEY_TOKEN);
           if (temp === null) {
             throw new Error(Errors.tokenLost);
           }
-  
+
           const token = temp.split(" ")[1].replace('"', "");
-          const decoded = await jwt_decode(token);
-          switch (decoded.sub) {
-            case "manager":
-              await authenticateFastlyAdmin(token);
-              break;
-            case "contributor":
-              await authenticateFastly(token);
-              break;
-            default:
-              throw new Error(Errors.tokenError);
+          const { payload } = await setUpAuthentication(token);
+
+          if (isAdminArea && payload.sub !== "manager") {
+            throw new Error(Errors.credentialError);
           }
         }
       } catch (error) {
+        logOut();
         alert(error);
+        setLoading(false);
+        window.scroll(0, 0);
+        window.location.href = "/";
       } finally {
         setLoading(false);
       }
     }
-    
-    getAuthentication();
+
+    getAuthorization();
   }, []);
 
-  async function authenticate({ username, password }) {
-    try {
-      const response = await signIn({ username, password });
-
-      if (response.status !== 200) {
-        throw new Error(response.reason);
-      }
-      return await authenticateFastly(response.data.token);
-    } catch (error) {
-      return new Error(error);
-    }
-  }
-
   async function authenticateAdmin({ username, password }) {
-    try {
-      const response = await signIn({ username, password });
-      return await authenticateFastlyAdmin(response.data.token);
-    } catch (error) {
-      return new Error(error);
-    }
+    const response = await authenticate({ username, password });
+
+    if (response.payload.sub !== "manager") {
+      throw new Error(Errors.credentialError);
+    } else return response;
   }
 
-  async function authenticateFastly(token) {
-    try {
-      const decoded = await jwt_decode(token);
-
-      // ATTENTION: these lines should to be a function.
-      // I did this way to avoid problems with useEffect constraints
-      setIsAuthenticated(true);
-      localStorage.setItem(
-        STORAGE_KEY_TOKEN,
-        JSON.stringify(`Bearer ${token}`)
-      );
-      api.defaults.headers.Authorization = `Bearer ${token}`;
-      setUser(decoded);
-      // until here
-
-      return { success: true };
-    } catch (error) {
-      return new Error(error);
+  async function authenticate({ username, password }) {
+    const response = await signIn({ username, password });
+    if (response.status !== 200) {
+      throw new Error(response.reason);
     }
+
+    return await setUpAuthentication(response.data.token);
   }
 
-  async function authenticateFastlyAdmin(token) {
-    try {
-      const decoded = await jwt_decode(token);
-      if (decoded.sub !== "manager") {
-        throw new Error(Errors.credentialError);
-      }
+  async function setUpAuthentication(token) {
+    const decoded = await jwt_decode(token);
 
-      setIsAuthenticated(true);
-      localStorage.setItem(
-        STORAGE_KEY_TOKEN,
-        JSON.stringify(`Bearer ${token}`)
-      );
-      api.defaults.headers.Authorization = `Bearer ${token}`;
-      setUser(decoded);
-
+    setIsAuthenticated(true);
+    localStorage.setItem(STORAGE_KEY_TOKEN, JSON.stringify(`Bearer ${token}`));
+    api.defaults.headers.Authorization = `Bearer ${token}`;
+    setUser(decoded);
+    if (decoded.sub === "manager") {
       setIsAdmin(true);
-
-      return { success: true };
-    } catch (error) {
-      return new Error(error);
+    } else {
+      setIsAdmin(false);
     }
+
+    return { success: true, payload: decoded };
   }
 
   function logOut() {
@@ -140,8 +110,8 @@ export default function AuthContextProvider({ children }) {
         loading,
         authenticate,
         authenticateAdmin,
-        authenticateFastly,
         handleLogOut,
+        logOut,
       }}
     >
       {children}

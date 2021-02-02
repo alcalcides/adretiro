@@ -6,7 +6,7 @@ import { AuthContext } from "../../model/contexts/auth";
 import LoginUserForm from "./LoginUserForm";
 
 export default function LoginUser() {
-  const { authenticate } = useContext(AuthContext);
+  const { authenticate, logOut } = useContext(AuthContext);
   const { goTo } = useGoTo();
 
   const [username, setUsername] = useState("");
@@ -20,7 +20,7 @@ export default function LoginUser() {
     }
 
     try {
-      const response = await authenticate({ username, password });
+      const response = await authenticate({ username, password });      
       if(response.success !== true){
         throw new Error(response)
       }
@@ -28,7 +28,8 @@ export default function LoginUser() {
       goTo(`/meus-filhos-de-jaco/${username}`);
       
     } catch (error) {
-      alert("Usuário ou senha incorretos");
+      logOut();
+      alert(error);
       goTo(`/acessar-minha-conta`);
     }
   }
