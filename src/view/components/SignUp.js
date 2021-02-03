@@ -7,7 +7,7 @@ import SignUpForm from "./SignUpForm";
 import useGoTo from "../../controller/hooks/useGoTo";
 
 export default function SignUp() {
-  const { authenticateFastly } = useContext(AuthContext);
+  const { authenticate } = useContext(AuthContext);
   const { goTo } = useGoTo();
 
   const [fullName, setFullName] = useState("");
@@ -42,15 +42,15 @@ export default function SignUp() {
 
     const data = getFilledFields(dataLiteral);
     try {
-      const response = await createContributor(data);
-      if (response.success === false) throw new Error(response.message);
+      const contributorResponse = await createContributor(data);
+      if (contributorResponse.success === false)
+        throw new Error(contributorResponse.message);
       else {
-        authenticateFastly(response.data.token);
+        await authenticate({ username, password });        
         goTo(`/meus-filhos-de-jaco/${username}`);
       }
     } catch (reason) {
       setPassword("");
-      console.log(reason);
       alert(reason);
     }
   }

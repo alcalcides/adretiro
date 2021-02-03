@@ -12,7 +12,7 @@ import SignUpForm from "./SignUpForm";
 export default function ProfileUpdate() {
   const { user } = useContext(AuthContext);
   const { goTo } = useGoTo();
-    
+
   const [fullName, setFullName] = useState("");
   const [username, setUsername] = useState("");
   const [birthday, setBirthday] = useState("");
@@ -24,20 +24,24 @@ export default function ProfileUpdate() {
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
   useEffect(() => {
-    getPeople(user.id)
-      .then((data) => {
-        setFullName(data.full_name);
-        setUsername(data.username);
-        if (data.birthday) setBirthday(data.birthday.split("T")[0]);
-        if (data.mothers_full_name) setMothersFullName(data.mothers_full_name);
-        if (data.email) setEmail(data.email);
-        if (data.whatsapp) setPhoneNumber(data.whatsapp);
-      })
-      .catch((err) => alert(err));
+    async function getPeopleData() {
+      try {
+        const dataPeople = await getPeople(user.id);
+        setFullName(dataPeople.full_name);
+        setUsername(dataPeople.username);
+        if (dataPeople.birthday) setBirthday(dataPeople.birthday.split("T")[0]);
+        if (dataPeople.mothers_full_name) setMothersFullName(dataPeople.mothers_full_name);
+        if (dataPeople.email) setEmail(dataPeople.email);
+        if (dataPeople.whatsapp) setPhoneNumber(dataPeople.whatsapp);
 
-    getEnrollmentsOf(user.id)
-      .then((res) => setEnrolledDepartment(res))
-      .catch((err) => alert(err));
+        const dataEnrollments = await getEnrollmentsOf(user.id);
+        setEnrolledDepartment(dataEnrollments);
+      } catch (error) {
+        alert(error);
+      }
+    }
+
+    getPeopleData();
   }, [user]);
 
   async function handleSignUpUpdate(e) {
