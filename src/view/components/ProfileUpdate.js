@@ -50,8 +50,6 @@ export default function ProfileUpdate() {
       return alert("Aceite os Termos de Uso");
     }
 
-    handleDepartments();
-
     const dataLiteral = {
       fullName,
       username,
@@ -59,7 +57,7 @@ export default function ProfileUpdate() {
       mothersFullName,
       email,
       phoneNumber,
-      enrolledDepartments,
+      enrolledDepartments: getCheckedDepartments(),
       password,
       hasAcceptedTermsOfUse,
     };
@@ -107,33 +105,15 @@ export default function ProfileUpdate() {
     />
   );
 
-  function handleDepartments() {
-    includeCheckedDepartments();
-    removeUncheckedDepartments();
-  }
-
-  function includeCheckedDepartments() {
+  function getCheckedDepartments() {
     const checkedDepartments = document.querySelectorAll(
       ".form-check-input:checked"
     );
-    checkedDepartments.forEach((department) => {
-      if (!enrolledDepartments.includes(department.value)) {
-        enrolledDepartments.push(department.value);
-      }
+    const temp = [];
+    checkedDepartments.forEach((item) => {
+      console.log(item.value);
+      temp.push(item.value);
     });
-  }
-
-  function removeUncheckedDepartments() {
-    const unCheckedDepartments = document.querySelectorAll(
-      ".form-check-input:not(:checked)"
-    );
-    unCheckedDepartments.forEach((department) => {
-      if (enrolledDepartments.includes(department.value)) {
-        enrolledDepartments.splice(
-          enrolledDepartments.indexOf(department.value),
-          1
-        );
-      }
-    });
+    return temp;
   }
 }
