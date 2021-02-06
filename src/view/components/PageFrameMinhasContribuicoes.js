@@ -4,7 +4,7 @@ import { membersPages } from "../../model/adminAssets.json";
 
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
-import NavMembers from "./NavMembers";
+import TitleMembersFrame from "./TitleMembersFrame";
 import Footer from "./Footer";
 import ButtonAnimated from "./ButtonAnimated";
 import Contributions from "./Contribuitions";
@@ -17,7 +17,7 @@ export default function PageFrameMinhasContribuicoes() {
     <div id="MeuPerfil">
       <UserBar />
       <MenuMinified pages={membersPages} />
-      <NavMembers />
+      <TitleMembersFrame />
       <main className="row no-gutters px-3">
         <section className="col-12">
           <Contributions/>

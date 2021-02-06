@@ -6,7 +6,7 @@ import MenuMinified from "./MenuMinified";
 import JacobsSuns from "./JacobsSuns";
 import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
-import NavMembers from "./NavMembers";
+import TitleMembersFrame from "./TitleMembersFrame";
 import UserBar from "./UserBar";
 
 export default function PageFrameMeusFilhosDeJaco({
@@ -22,7 +22,7 @@ export default function PageFrameMeusFilhosDeJaco({
           <MenuMinified pages={membersPages}/>
         </div>
       </div>
-      <NavMembers/>
+      <TitleMembersFrame/>
       <main>
         <div className="row no-gutters justify-content-center">
           <div className="col-9" id="stickersFrame">

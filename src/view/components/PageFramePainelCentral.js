@@ -4,7 +4,7 @@ import { adminPages } from "../../model/adminAssets.json";
 
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
-import NavAdmins from "./NavAdmins";
+import TitleAdminsFrame from "./TitleAdminsFrame";
 import Footer from "./Footer";
 
 export default function PageFramePainelCentral() {
@@ -13,7 +13,7 @@ export default function PageFramePainelCentral() {
     <div id="PainelCentral">
       <UserBar/>
       <MenuMinified pages={adminPages}/>
-      <NavAdmins/>
+      <TitleAdminsFrame/>
       <main className="row no-gutters justify-content-center">
         Painel Central aqui
       </main>

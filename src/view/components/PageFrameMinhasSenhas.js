@@ -4,7 +4,7 @@ import { membersPages } from "../../model/adminAssets.json";
 
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
-import NavMembers from "./NavMembers";
+import TitleMembersFrame from "./TitleMembersFrame";
 import Footer from "./Footer";
 import Stickers from "./Stickers";
 
@@ -14,7 +14,7 @@ export default function PageFrameMinhasSenhas() {
     <div id="MeuPerfil">
       <UserBar />
       <MenuMinified pages={membersPages} />
-      <NavMembers />
+      <TitleMembersFrame />
       <main className="row no-gutters px-3">
         <section className="col-12">
           <Stickers/>

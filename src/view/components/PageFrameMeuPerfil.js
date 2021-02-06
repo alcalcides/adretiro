@@ -4,7 +4,7 @@ import { membersPages } from "../../model/adminAssets.json";
 
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
-import NavMembers from "./NavMembers";
+import TitleMembersFrame from "./TitleMembersFrame";
 import ProfileUpdate from "./ProfileUpdate";
 import Footer from "./Footer";
 
@@ -14,7 +14,7 @@ export default function PageFrameMeuPerfil() {
     <div id="MeuPerfil">
       <UserBar/>
       <MenuMinified pages={membersPages}/>
-      <NavMembers/>
+      <TitleMembersFrame/>
       <main className="row no-gutters justify-content-center">
         <ProfileUpdate />
       </main>

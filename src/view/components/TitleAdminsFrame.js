@@ -1,11 +1,11 @@
 import React from "react";
 
-import TitleMembers from "./TitleMembers";
+import TitleAdmins from "./TitleAdmins";
 
-export default function NavMembers() {
+export default function TitleAdminsFrame() {
   return (
     <div className="row no-gutters justify-content-center align-items-center bg-dark p-2">
-      <TitleMembers />
+      <TitleAdmins />
     </div>
   );
 }
