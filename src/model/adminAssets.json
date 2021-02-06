@@ -14,7 +14,8 @@
     { "title": "Meu Perfil", "slug": "meu-perfil" }
   ],
   "adminPages": [
-    { "title": "Painel Central", "slug": "painel-central" }
+    { "title": "Painel Central", "slug": "painel-central" },
+    { "title": "Contribuintes", "slug": "contribuintes" }
   ],
   "jacobSuns": [
     "gade",

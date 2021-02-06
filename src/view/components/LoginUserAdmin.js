@@ -29,7 +29,6 @@ export default function LoginUserAdmin() {
     } catch (error) {
       logOut();
       alert(error);
-      goTo(`/acesso-administrativo`);
     }
   }
 
