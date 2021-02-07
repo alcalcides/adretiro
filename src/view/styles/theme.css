@@ -32,4 +32,8 @@ footer p {
     font-size: 1rem;
 }
 
+.table-rounded{
+    border-radius: 0.5rem
+}
+
 @import "./LoadingProgress.css";

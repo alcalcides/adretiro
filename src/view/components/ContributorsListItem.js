@@ -9,11 +9,12 @@ import { IconContext } from "react-icons";
 export default function ContributorsListItem({ contributorData }) {
   return (
     <tr>
-      <td className="px-1 px-sm-2">{contributorData.username}</td>
-      <td className="px-1 px-sm-2">{contributorData.fullName}</td>
-      <td className="px-1 px-sm-2">
+      <td className="px-1 px-sm-2 align-middle">{contributorData.username}</td>
+      <td className="px-1 px-sm-2 align-middle">{contributorData.fullName}</td>
+      <td className="px-1 px-sm-2 align-middle">
         <div className="container">
           <div className="row justify-content-around">
+            {/* see album */}
             <IconContext.Provider
               value={{ color: "darkred", size: "1.6rem" }}
               className="col-sm"
@@ -21,13 +22,15 @@ export default function ContributorsListItem({ contributorData }) {
               <ImImages className="my-1" />
             </IconContext.Provider>
 
+            {/* contribution form */}
             <IconContext.Provider 
               value={{ size: "1.8rem" }} 
               className="col-sm"
-            >
-              <FcMoneyTransfer />
+            >              
+              <FcMoneyTransfer />              
             </IconContext.Provider>
 
+            {/* see stickers */}
             <IconContext.Provider
               value={{ color: "darkgoldenrod", size: "1.8rem" }}
               className="col-sm"
@@ -35,8 +38,9 @@ export default function ContributorsListItem({ contributorData }) {
               <IoMdKey />
             </IconContext.Provider>
 
+            {/* see profile */}
             <IconContext.Provider
-              value={{ color: "midnightblue", size: "1.8rem" }}
+              value={{ color: "#646567", size: "1.8rem" }}
               className="col-sm"
             >
               <MdPerson />

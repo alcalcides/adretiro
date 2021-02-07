@@ -16,15 +16,15 @@ export default function ContributorsList() {
 
   return (
     <div className="table-responsive">
-      <table className="table table-sm table-warning text-dark">
-        <thead className="h6">
-          <tr>
-            <th scope="col" className="align-middle text-center">Username</th>
-            <th scope="col" className="align-middle text-center">Nome Completo</th>
-            <th scope="col" className="align-middle text-center">Ações</th>
+      <table className="table table-sm table-warning table-rounded text-dark">
+        <thead className="h5">
+          <tr className="">
+            <th scope="col" className="align-middle text-center border-top-0 py-3">Username</th>
+            <th scope="col" className="align-middle text-center border-top-0 py-3">Nome Completo</th>
+            <th scope="col" className="align-middle text-center border-top-0 py-3">Ações</th>
           </tr>
         </thead>
-        <tbody className="h5">
+        <tbody className="h6">
           {listOfContributors.map((contributor) => (
             <ContributorsListItem
               key={contributor.username}
