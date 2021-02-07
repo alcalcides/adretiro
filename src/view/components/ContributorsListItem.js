@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { IoMdKey } from "react-icons/io";
 import { MdPerson } from "react-icons/md";
 import { FcMoneyTransfer } from "react-icons/fc";
 import { ImImages } from "react-icons/im";
 import { IconContext } from "react-icons";
+import ModalContributionForm from "./ModalContributionForm";
 
 export default function ContributorsListItem({ contributorData }) {
+  const [isShownContributionForm, setIsShownContributionForm] = useState(false);
+
+  function closeContributionForm() {
+    setIsShownContributionForm(false);
+  }
+  function showContributionForm() {
+    setIsShownContributionForm(true);
+  }
+
   return (
     <tr>
       <td className="px-1 px-sm-2 align-middle">{contributorData.username}</td>
@@ -23,13 +33,18 @@ export default function ContributorsListItem({ contributorData }) {
             </IconContext.Provider>
 
             {/* contribution form */}
-            <IconContext.Provider 
-              value={{ size: "1.8rem" }} 
-              className="col-sm"
-            >              
-              <FcMoneyTransfer />              
+            <IconContext.Provider value={{ size: "1.8rem" }} className="col-sm">
+              <FcMoneyTransfer
+                onClick={showContributionForm}
+                cursor="pointer"
+              />
             </IconContext.Provider>
-
+            <ModalContributionForm
+              username={contributorData.username}
+              isVisible={isShownContributionForm}
+              handleClose={closeContributionForm}
+            />
+            
             {/* see stickers */}
             <IconContext.Provider
               value={{ color: "darkgoldenrod", size: "1.8rem" }}
