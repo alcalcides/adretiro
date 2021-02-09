@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
-
-import { contributionsExemple } from "../../model/services/contributionsExemple";
 import CardContribution from "./CardContribution";
+import { getContributionsOf } from "../../model/services/getContributionsOf";
+import fullTimeStringToLocalTime from "../../model/library/fullTimeStringToLocalTime";
 
 export default function Contributions() {
   const [contributions, setContributions] = useState([]);
 
   useEffect(() => {
-    setContributions(JSON.parse(contributionsExemple)); //ATTENTION server call
+    async function getContributionsData(){
+      const response = await getContributionsOf("andres");
+      setContributions(response); 
+    }
+    getContributionsData();
   }, []);
 
   return (
@@ -15,7 +19,7 @@ export default function Contributions() {
       {contributions.map((contribution) => (
         <CardContribution
           key={contribution.id}
-          date={contribution.date}
+          date={fullTimeStringToLocalTime(contribution.date)}
           value={contribution.value}
           manager={contribution.manager}
           contributor={contribution.contributor}

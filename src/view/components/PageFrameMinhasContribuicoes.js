@@ -7,7 +7,7 @@ import MenuMinified from "./MenuMinified";
 import TitleMembersFrame from "./TitleMembersFrame";
 import Footer from "./Footer";
 import ButtonAnimated from "./ButtonAnimated";
-import Contributions from "./Contribuitions";
+import Contributions from "./Contributions";
 import numberToMoney from "../../model/library/niceNumbers";
 
 export default function PageFrameMinhasContribuicoes() {
