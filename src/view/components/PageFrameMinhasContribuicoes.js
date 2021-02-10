@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-
-import { membersPages } from "../../model/adminAssets.json";
+import React from "react";
 
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
@@ -8,11 +6,11 @@ import TitleMembersFrame from "./TitleMembersFrame";
 import Footer from "./Footer";
 import ButtonAnimated from "./ButtonAnimated";
 import Contributions from "./Contributions";
-import numberToMoney from "../../model/library/niceNumbers";
+import AccountBalance from "./AccountBalance";
+
+import { membersPages } from "../../model/adminAssets.json";
 
 export default function PageFrameMinhasContribuicoes() {
-  const [accountBallance] = useState(10.0);
-
   return (
     <div id="MeuPerfil">
       <UserBar />
@@ -23,7 +21,7 @@ export default function PageFrameMinhasContribuicoes() {
           <Contributions/>
         </section>
         <section className="col-12 d-flex justify-content-center align-items-center my-3">
-          <p className="mb-0">Saldo: {numberToMoney(accountBallance)}</p>
+          <AccountBalance />
         </section>
         <section className="col-12">
           <div className="row no-gutters justify-content-center">
