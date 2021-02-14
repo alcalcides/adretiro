@@ -1,14 +1,14 @@
 import React from "react";
 
+import { membersPages } from "../../model/adminAssets.json";
+
 import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
 import TitleMembersFrame from "./TitleMembersFrame";
 import Footer from "./Footer";
-import ButtonAnimated from "./ButtonAnimated";
 import Contributions from "./Contributions";
 import AccountBalance from "./AccountBalance";
-
-import { membersPages } from "../../model/adminAssets.json";
+import OrdererStickers from "./OrdererStickers";
 
 export default function PageFrameMinhasContribuicoes() {
   return (
@@ -25,12 +25,7 @@ export default function PageFrameMinhasContribuicoes() {
         </section>
         <section className="col-12">
           <div className="row no-gutters justify-content-center">
-            <ButtonAnimated
-              callToAction="Liberar Senhas"
-              actionToPerform={() => { alert("em construção"); }}
-              animation="myBig"
-              specialStyles="myRed"
-            />
+            <OrdererStickers />
           </div>
         </section>
       </main>
