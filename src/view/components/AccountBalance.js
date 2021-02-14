@@ -9,8 +9,8 @@ export default function AccountBalance() {
 
   useEffect(() => {
     async function getAccountBalance() {
-      const { amount } = await getContributor(user.id);
-      setAccountBalance(amount);
+      const { account_balance } = await getContributor(user.id);
+      setAccountBalance(account_balance);
     }
     getAccountBalance();
   });
