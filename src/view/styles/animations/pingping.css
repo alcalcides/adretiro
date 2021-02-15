@@ -1,0 +1,14 @@
+@keyframes pingping {
+    from {
+        top: 0px;
+        transform: scaleX(1.02);
+    }
+    90% {
+        top: 5px;
+        transform: scaleX(1);
+    }
+    to {
+        top: 0px;
+        transform: scaleX(1.02);
+    }
+}

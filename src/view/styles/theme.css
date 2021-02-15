@@ -36,4 +36,13 @@ footer p {
     border-radius: 0.5rem
 }
 
+
+@import "./animations/pingping.css";
+.UpAndDownAnimation {
+    position: relative;
+    animation-name: pingping;
+    animation-duration: 0.5s;
+    animation-iteration-count: infinite;
+}
+
 @import "./LoadingProgress.css";
