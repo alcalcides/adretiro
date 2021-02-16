@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import AnimatedEmoji from "./AnimatedEmoji";
+import { revealSticker } from "../../model/services/revealSticker";
 
 export default function CardSticker({ label, jacobsSun, status }) {
   const [active, setActive] = useState(false);
@@ -8,15 +9,19 @@ export default function CardSticker({ label, jacobsSun, status }) {
   function handleRevealSticker() {
     setIsPlaying(true);
     setTimeout(() => {
-      alert("em construção"); //ATTENTION server side and refresh
-      setIsPlaying(false);
-    }, 3000);
-
-    
+      revealSticker(label).then(() => {
+        alert(`Confira sua Senha!`);
+        setActive(true)
+      }).catch((error) => {
+        alert(error);
+      }).finally(() => {
+        setIsPlaying(false);
+      })      
+    }, 3000);    
   }
 
   useEffect(() => {
-    if (status === "revealed") {
+    if (status === "REVEALED") {
       setActive(true);
     }
   }, [status]);

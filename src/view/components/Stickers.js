@@ -21,7 +21,7 @@ export default function Stickers() {
         <CardSticker
           key={stickers.label}
           label={stickers.label}
-          jacobsSun={stickers.jacobsSun}
+          jacobsSun={stickers.name}
           status={stickers.status}
         />
       ))}
