@@ -1,9 +1,21 @@
 # Release Notes
 
+## 0.20.0
++ Shows sticker album of a person
+### Issues
++ [Desing] Compress image used in sticker revealing
++ Provide some solution to leak memory warm
++ Fix semantic html tags in components of type 'PageFrameX'. Use <section> instead of <div>.
++ [Security] An authenticated user must not access other user by url params manipulation
++ [Security] The token cannot be changed even at the beginning and the page continues to work
++ [CSS] Reset animated button style after be clicked in mobiles devices 
++ [MVP] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
++ [MVP] Refactores interface of the component "SignUpForm"  to receive an object instead of lots of destructured items. Maybe, this issue will do login form be refactored as well.
++ [MVP] Remove code repetition among sign up and profile update features. Repeted functions: handleDepartments, includeCheckedDepartments and removeUncheckedDepartments.
+
 ## 0.19.1
 + Handles low-balance users by requesting stickers
 ### Issues
-+ Avoid request reveals of stickers when theres is no contribution.
 + Provide some solution to leak memory warm
 + Fix semantic html tags in components of type 'PageFrameX'. Use <section> instead of <div>.
 + [Security] An authenticated user must not access other user by url params manipulation

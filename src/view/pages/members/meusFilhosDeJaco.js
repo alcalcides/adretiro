@@ -1,15 +1,20 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState, useEffect, useContext } from "react";
+import { AuthContext } from "../../../model/contexts/auth"
 import PageFrameMeusFilhosDeJaco from "../../components/PageFrameMeusFilhosDeJaco";
-
+import { getMyJacobsSons } from "../../../model/services/getMyJacobsSons"
 import "../../styles/stickersFrame.css";
 
 export default function MeusFilhosDeJaco() {
   const [myJacobSuns, setMyJacobSuns] = useState([]);
+  const { user } = useContext(AuthContext)
 
   useEffect(() => {
-    setMyJacobSuns(["jose", "asser", "issacar", "juda", "gade"]); // ATTENTION get via api
-  }, []);
+    async function retrivesMyJacobsSons() {
+      const sons = await getMyJacobsSons(user.id)
+      setMyJacobSuns(sons);
+    }
+    retrivesMyJacobsSons();
+  }, [user.id]);
 
   function handleRewardRequest(e) {
     e.preventDefault();
