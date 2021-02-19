@@ -1,4 +1,5 @@
 import React from "react";
+import { validateFullText } from "../../model/businessRules/validateFullText";
 
 export default function FormInputText({
   title,
@@ -7,6 +8,8 @@ export default function FormInputText({
   setContent,
   placeholder,
   propertyID,
+  typingValidation = (e) => setContent(e.target.value),
+  laterValidation = validateFullText(setContent)
 }) {
   return (
     <div className="form-group">
@@ -18,7 +21,8 @@ export default function FormInputText({
         aria-describedby={`${propertyID}Help`}
         placeholder={placeholder}
         value={content}
-        onChange={(e) => setContent(e.target.value)}
+        onChange={typingValidation}
+        onBlur={laterValidation}
       />
       <small id={`${propertyID}Help`} className="form-text text-muted h5">
         {tip}
@@ -26,3 +30,4 @@ export default function FormInputText({
     </div>
   );
 }
+

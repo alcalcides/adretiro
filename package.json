@@ -1,6 +1,6 @@
 {
   "name": "mais-retiro",
-  "version": "0.21.0",
+  "version": "0.21.1",
   "private": true,
   "author": {
     "name": "Alcides Augusto Bezerra Neto",
@@ -15,6 +15,7 @@
     "react-bootstrap": "^1.4.0",
     "react-dom": "^16.14.0",
     "react-icons": "^4.1.0",
+    "react-input-mask": "^2.0.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },

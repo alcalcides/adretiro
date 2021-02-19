@@ -18,11 +18,13 @@ export default function LoginUserForm({
   return (
     <form id="LoginUserForm" className="col-10 col-md-6 publicForms" onSubmit={handleUserLogin}>
       <FormInputPatternUserName   
+        tip=""
         content={username}
         setContent={setUsername}
         propertyID="userNameForLogin"
       />
       <FormInputPassword
+        tip=""
         password={password}
         setPassword={setPassword}
         labelContent="Senha"

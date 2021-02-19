@@ -76,7 +76,7 @@ export default function ModalContributionForm({
             id="contributionsValue"
             min={0.01}
             step={0.01}
-            value={money}
+            value={!!money && money}
             onChange={(e) => setMoney(Number(e.target.value))}
           />
         </div>

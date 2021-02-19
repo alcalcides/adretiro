@@ -13,7 +13,6 @@ export default function FormInputPatternBirthday({
       setContent={setContent}
       propertyID={propertyID}
       title="Data de Nascimento"
-      tip="Não se preocupe... Todos nós estamos envelhecendo."
     />
   );
 }
