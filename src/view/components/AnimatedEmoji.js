@@ -1,6 +1,6 @@
 import React from "react";
 
-import GreatThumbEmoji from "../images/thumbs-up-4007573_640.png";
+import GreatThumbEmoji from "../images/thumbs-up_640-min.png";
 
 export default function AnimatedEmoji() {
   return (
