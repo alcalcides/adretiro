@@ -4,7 +4,7 @@
     { "title": "Página Inicial", "slug": "" },
     { "title": "Fazer Cadastro", "slug": "fazer-cadastro" },
     { "title": "Acessar Minha Conta", "slug": "acessar-minha-conta" },
-    { "title": "Solicitar Nova Senha", "slug": "solicitar-nova-senha" },
+    { "title": "Redefinir Senha", "slug": "redefinir-senha" },
     { "title": "Acesso Administrativo", "slug": "acesso-administrativo" }
   ],
   "membersPages": [

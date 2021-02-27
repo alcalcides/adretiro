@@ -1,30 +1,39 @@
 import React, { useState } from "react";
+import { requestPasswordRecovery } from "../../model/services/requestPasswordRecovery";
 
 import ResetPasswordForm from "./ResetPasswordForm";
 
 export default function ResetPassword() {
-  const [fullName, setFullName] = useState("");
+  const [username, setUsername] = useState("");
   const [hasAcceptedTermsOfUse, setHasAcceptedTermsOfUse] = useState(false);
 
-  function handlePasswordReset(e) {
+  async function handlePasswordReset(e) {
     e.preventDefault();
     if (!hasAcceptedTermsOfUse) {
       return alert("Aceite os Termos de Uso");
     }
 
     console.log({
-      fullName,
+      username,
       hasAcceptedTermsOfUse,
     });
 
-    alert(`Em construção.`);
+    try {
+      const response = await requestPasswordRecovery(username);
+      if (response.success !== true) throw new Error(response.message);
+      alert("Link de recuperação de senha enviado por email.");
+      
+    } catch (err) {
+      console.log(err);
+      alert(err.message);
+    }
   }
 
   return (
     <ResetPasswordForm
       handlePasswordReset={handlePasswordReset}
-      fullName={fullName}
-      setFullName={setFullName}
+      username={username}
+      setUsername={setUsername}
       setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
     />
   );

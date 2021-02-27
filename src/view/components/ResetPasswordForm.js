@@ -2,29 +2,34 @@ import React from "react";
 
 import "../styles/ResetPasswordForm.css";
 
-import FormInputPatternFullName from "./FormInputPatternFullName";
 import FormInputSwitch from "./FormInputSwitch";
 import FormInputFinalButton from "./FormInputFinalButton";
+import FormInputPatternUserName from "./FormInputPatternUserName";
 
 export default function ResetPasswordForm({
   handlePasswordReset,
-  fullName,
-  setFullName,
-  setHasAcceptedTermsOfUse,
+  username,
+  setUsername,
+  setHasAcceptedTermsOfUse
 }) {
   return (
     <form
       id="ResetPasswordForm"
-      className="col-10 col-md-6 publicForms"
+      className="publicForms"
       onSubmit={handlePasswordReset}
     >
-      <FormInputPatternFullName content={fullName} setContent={setFullName} />
+      <FormInputPatternUserName
+        content={username}
+        setContent={setUsername}
+        propertyID="userNameForResetPassword"
+        tip="Sua identificação no sistema"
+      />
       <FormInputSwitch
         setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
         labelContent="Estou ciente que a senha antiga será substituída"
         propertyID="switchForNewPassword"
       />
-      <FormInputFinalButton callToAction={"Solicitar Nova Senha"} />
+      <FormInputFinalButton callToAction="Solicitar Redefinição de Senha" />
     </form>
   );
 }
