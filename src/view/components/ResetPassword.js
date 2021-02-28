@@ -13,14 +13,9 @@ export default function ResetPassword() {
       return alert("Aceite os Termos de Uso");
     }
 
-    console.log({
-      username,
-      hasAcceptedTermsOfUse,
-    });
-
     try {
       const response = await requestPasswordRecovery(username);
-      if (response.success !== true) throw new Error(response.message);
+      if (response.success === false) throw new Error(response.message);
       alert("Link de recuperação de senha enviado por email.");
       
     } catch (err) {
