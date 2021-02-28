@@ -6,6 +6,7 @@ import AcessarMinhaConta from "../../view/pages/acessarMinhaConta";
 import FazerCadastro from "../../view/pages/fazerCadastro";
 import RedefinirSenha from "../../view/pages/redefinirSenha";
 import AcessoAdministrativo from "../../view/pages/admin/acessoAdministrativo";
+import ResetPassword from "../../view/pages/resetPassword";
 
 export default function PublicRoutes() {
   return (
@@ -15,6 +16,7 @@ export default function PublicRoutes() {
       <Route path="/fazer-cadastro" component={FazerCadastro} />
       <Route path="/redefinir-senha" component={RedefinirSenha} />
       <Route path="/acesso-administrativo" component={AcessoAdministrativo} />
+      <Route path="/reset-password" component={ResetPassword} />
     </>
   );
 }

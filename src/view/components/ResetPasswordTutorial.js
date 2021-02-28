@@ -1,5 +1,5 @@
 import React from "react";
-import ResetPassword from "./ResetPassword";
+import ResetPasswordOrder from "./ResetPasswordOrder";
 
 import "../styles/ResetPasswordTutorial.css"
 
@@ -10,7 +10,7 @@ export default function ResetPasswordTutorial() {
         1) Solicite envio de email com o link para redefinição de senha
       </p>
       <div className="col-12">
-        <ResetPassword />
+        <ResetPasswordOrder />
       </div>
       <p className="col-12">
         2) Acessar seu email e clicar para redefinir a senha

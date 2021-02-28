@@ -4,32 +4,41 @@ import "../styles/ResetPasswordForm.css";
 
 import FormInputSwitch from "./FormInputSwitch";
 import FormInputFinalButton from "./FormInputFinalButton";
-import FormInputPatternUserName from "./FormInputPatternUserName";
+import FormInputPassword from "./FormInputPassword";
 
 export default function ResetPasswordForm({
   handlePasswordReset,
-  username,
-  setUsername,
+  password,
+  setPassword,
+  passwordCopy,
+  setPasswordCopy,
   setHasAcceptedTermsOfUse
 }) {
   return (
     <form
       id="ResetPasswordForm"
-      className="publicForms"
+      className="publicForms col-10 col-md-6"
       onSubmit={handlePasswordReset}
     >
-      <FormInputPatternUserName
-        content={username}
-        setContent={setUsername}
-        propertyID="userNameForResetPassword"
-        tip="Sua identificação no sistema"
+      <FormInputPassword
+        password={password}
+        setPassword={setPassword}
+        propertyID="newPasswordInput"
+        labelContent="Nova senha"
+      />
+      <FormInputPassword
+        password={passwordCopy}
+        setPassword={setPasswordCopy}
+        propertyID="newPasswordInputCopy"
+        labelContent="Confirmar digitação"
+        tip=""
       />
       <FormInputSwitch
         setHasAcceptedTermsOfUse={setHasAcceptedTermsOfUse}
         labelContent="Estou ciente que a senha antiga será substituída"
         propertyID="switchForNewPassword"
       />
-      <FormInputFinalButton callToAction="Solicitar Redefinição de Senha" />
+      <FormInputFinalButton callToAction="Atualizar Senha" />
     </form>
   );
 }
