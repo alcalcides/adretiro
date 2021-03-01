@@ -6,21 +6,21 @@ import "../../styles/stickersFrame.css";
 import { requestReward } from "../../../model/services/requestReward";
 
 export default function MeusFilhosDeJaco() {
-  const [myJacobSuns, setMyJacobSuns] = useState([]);
+  const [myJacobSons, setMyJacobSons] = useState([]);
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
     async function retrivesMyJacobsSons() {
       const sons = await getMyJacobsSons(user.id);
-      setMyJacobSuns(sons);
+      setMyJacobSons(sons);
     }
     retrivesMyJacobsSons();
   }, [user.id]);
 
   async function handleRewardRequest(e) {
     e.preventDefault();
-    if (myJacobSuns.length < 12) {
-      const stickersLacking = 12 - myJacobSuns.length;
+    if (myJacobSons.length < 12) {
+      const stickersLacking = 12 - myJacobSons.length;
       return alert(
         `Acumule mais ${stickersLacking} filhos de Jacó para pedir seu prêmio.`
       );
@@ -45,7 +45,7 @@ export default function MeusFilhosDeJaco() {
 
   return (
     <PageFrameMeusFilhosDeJaco
-      myJacobSuns={myJacobSuns}
+      myJacobSons={myJacobSons}
       handleRewardRequest={handleRewardRequest}
     />
   );

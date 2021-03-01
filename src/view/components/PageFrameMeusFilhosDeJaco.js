@@ -3,7 +3,7 @@ import React from "react";
 import { membersPages } from "../../model/adminAssets.json";
 
 import MenuMinified from "./MenuMinified";
-import JacobsSuns from "./JacobsSuns";
+import JacobsSons from "./JacobsSons";
 import ButtonAnimated from "./ButtonAnimated";
 import Footer from "./Footer";
 import TitleMembersFrame from "./TitleMembersFrame";
@@ -11,7 +11,7 @@ import UserBar from "./UserBar";
 
 export default function PageFrameMeusFilhosDeJaco({
   handleRewardRequest,
-  myJacobSuns
+  myJacobSons
 }) {
 
   return (
@@ -26,7 +26,7 @@ export default function PageFrameMeusFilhosDeJaco({
       <main>
         <div className="row no-gutters justify-content-center">
           <div className="col-9" id="stickersFrame">
-            <JacobsSuns myJacobSuns={myJacobSuns} />
+            <JacobsSons myJacobSons={myJacobSons} />
           </div>
         </div>
         <div className="row no-gutters">
