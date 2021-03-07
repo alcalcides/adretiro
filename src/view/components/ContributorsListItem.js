@@ -6,15 +6,24 @@ import { FcMoneyTransfer } from "react-icons/fc";
 import { ImImages } from "react-icons/im";
 import { IconContext } from "react-icons";
 import ModalContributionForm from "./ModalContributionForm";
+import ModalProfileGlance from "./ModalProfileGlance";
 
 export default function ContributorsListItem({ contributorData }) {
   const [isShownContributionForm, setIsShownContributionForm] = useState(false);
+  const [isShownProfileGlance, setIsShownProfileGlance] = useState(false);
 
   function closeContributionForm() {
     setIsShownContributionForm(false);
   }
   function showContributionForm() {
     setIsShownContributionForm(true);
+  }
+
+  function closeProfileGlance() {
+    setIsShownProfileGlance(false);
+  }
+  function showProfileGlance() {
+    setIsShownProfileGlance(true);
   }
 
   return (
@@ -58,8 +67,16 @@ export default function ContributorsListItem({ contributorData }) {
               value={{ color: "#646567", size: "1.8rem" }}
               className="col-sm"
             >
-              <MdPerson />
+              <MdPerson 
+                onClick={showProfileGlance}
+                cursor="pointer"
+              />
             </IconContext.Provider>
+            <ModalProfileGlance
+              username={contributorData.username}
+              isVisible={isShownProfileGlance}
+              handleClose={closeProfileGlance}
+            />
           </div>
         </div>
       </td>
