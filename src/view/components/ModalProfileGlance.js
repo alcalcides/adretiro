@@ -49,7 +49,7 @@ export default function ModalProfileGlance({
       <p className="h5 text-info"><label className="text-secondary">Whatsapp:&nbsp;</label>{phoneNumber}</p>
       <p className="h5 text-info"><label className="text-secondary">Matrículas:&nbsp;</label></p>
       <ul>
-        {enrolledDepartments.map((department, index) => (
+        {!!enrolledDepartments.length && enrolledDepartments.map((department, index) => (
           <li key={index} className="h6 text-info">{department}</li>
         ))}
       </ul>
