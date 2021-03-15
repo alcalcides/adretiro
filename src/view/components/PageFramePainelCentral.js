@@ -6,6 +6,7 @@ import UserBar from "./UserBar";
 import MenuMinified from "./MenuMinified";
 import TitleAdminsFrame from "./TitleAdminsFrame";
 import Footer from "./Footer";
+import PainelContributionTotal from "./PainelContributionTotal";
 
 export default function PageFramePainelCentral() {
 
@@ -15,7 +16,7 @@ export default function PageFramePainelCentral() {
       <MenuMinified pages={adminPages}/>
       <TitleAdminsFrame/>
       <main className="row no-gutters justify-content-center">
-        Painel Central aqui
+        <PainelContributionTotal />
       </main>
       <Footer />
     </div>
