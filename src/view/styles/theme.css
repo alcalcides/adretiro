@@ -36,6 +36,11 @@ footer p {
     border-radius: 0.5rem
 }
 
+.clickableUI {
+    position: absolute;
+    right: 0;
+}
+
 
 @import "./animations/pingping.css";
 .UpAndDownAnimation {

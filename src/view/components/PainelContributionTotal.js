@@ -7,14 +7,12 @@ export default function PainelContributionTotal() {
 
   useEffect(() => {
     async function getContributionTotalData() {
-      const {contributionTotal} = await getContributionTotal();
+      const { contributionTotal } = await getContributionTotal();
       setContributionTotal(contributionTotal);
     }
 
     getContributionTotalData();
   }, []);
 
-  return (
-    <div>Arrecadação Total: {numberToMoney(contributionTotal)}</div>
-  )
+  return <p>Arrecadação Total: {numberToMoney(contributionTotal)}</p>;
 }
