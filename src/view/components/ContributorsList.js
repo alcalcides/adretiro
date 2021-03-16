@@ -21,7 +21,7 @@ export default function ContributorsList() {
           <tr className="">
             <th scope="col" className="align-middle text-center border-top-0 py-3">Username</th>
             <th scope="col" className="align-middle text-center border-top-0 py-3">Nome Completo</th>
-            <th scope="col" className="align-middle text-center border-top-0 py-3">Ações</th>
+            <th scope="col" className="align-middle text-center border-top-0 py-3"></th>
           </tr>
         </thead>
         <tbody className="h6">

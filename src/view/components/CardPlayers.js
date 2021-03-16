@@ -44,6 +44,7 @@ export default function CardPlayers({
           color={defineButtonColor(display)}
           size="1.8rem"
           onClick={toggleDisplay}
+          cursor="pointer"
         />
       </div>
       <div className="card-body mt-3">
