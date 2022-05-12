@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Routes } from "react-router-dom";
 
 import { AuthContext } from "../../model/contexts/auth";
 
@@ -7,7 +8,7 @@ import AdminsRouters from "./Admins.routes";
 import PublicRoutes from "./Public.routes";
 import LoadingProgress from "../../view/components/LoadingProgress";
 
-export default function Routes() {
+export default function RoutesADRetiro() {
   const { isAuthenticated, isAdmin, loading } = useContext(AuthContext);
   
   if (loading) {

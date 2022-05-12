@@ -2,7 +2,9 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useGoTo from "../../controller/hooks/useGoTo";
 
-import { siteName } from "../../model/adminAssets.json";
+import adminAssets from "../../model/adminAssets.json";
+const { siteName } = adminAssets;
+
 import { AuthContext } from "../../model/contexts/auth";
 
 import logoMinified from "../images/logo-without-background.svg";

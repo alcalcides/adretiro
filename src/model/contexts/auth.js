@@ -4,7 +4,9 @@ import jwt_decode from "jwt-decode";
 import { signIn } from "../services/signIn";
 import api from "../services/interface/api";
 import Errors from "../Errors";
-import { adminPages, membersPages } from "../adminAssets.json";
+import adminAssets from "../adminAssets.json";
+
+const { adminPages, membersPages } = adminAssets
 
 export const AuthContext = createContext();
 

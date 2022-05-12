@@ -2,7 +2,8 @@ import React from "react";
 
 import MainMenuItem from "./MainMenuItem";
 
-import { mainPublicPages } from "../../model/adminAssets.json";
+import adminAssets from "../../model/adminAssets.json";
+const { mainPublicPages } = adminAssets;
 
 export default function MainMenu({ currentSlugsPage}) {
   return (

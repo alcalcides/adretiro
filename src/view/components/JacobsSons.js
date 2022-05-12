@@ -1,6 +1,8 @@
 import React from "react";
 
-import { jacobSons } from "../../model/adminAssets.json";
+import adminAssets from "../../model/adminAssets.json";
+const { jacobSons } = adminAssets;
+
 import RÚBEN from "../images/RÚBEN.png";
 import SIMEÃO from "../images/SIMEÃO.png";
 import LEVI from "../images/LEVI.png";

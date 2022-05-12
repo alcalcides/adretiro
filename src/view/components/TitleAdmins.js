@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import useGetPageRecord from "../../controller/hooks/useGetPageRecord";
 
-import { adminPages } from "../../model/adminAssets.json"
+import adminAssets from "../../model/adminAssets.json";
+
+const { adminPages } = adminAssets;
  
 export default function TitleAdmins() {
   const [title, setTitle] = useState('');

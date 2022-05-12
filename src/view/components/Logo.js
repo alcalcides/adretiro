@@ -1,7 +1,8 @@
 import React from "react";
 
 import useGoTo from "../../controller/hooks/useGoTo";
-import { siteName } from "../../model/adminAssets.json";
+import adminAssets from "../../model/adminAssets.json";
+const { siteName } = adminAssets;
 
 import logo from "../images/logo-styled.svg";
 import "../styles/logo.css";

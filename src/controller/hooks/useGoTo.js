@@ -1,13 +1,12 @@
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 function useGoTo() {
-    const history = useHistory();
+    const navigate = useNavigate();
     
     function goTo (url) {
         window.scroll(0, 0);
-        history.push(url);
+        navigate(url);
     }
-
     return { goTo };
 }
 
