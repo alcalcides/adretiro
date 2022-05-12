@@ -26,7 +26,7 @@ export default function NavbarItens({ pages }) {
           title={page.title}
           disabled={areYouAlreadyHere(page)}
           onClick={goToPage(
-            isAuthenticated ? `../${page.slug}/${username}` : page.slug
+            isAuthenticated ? `../${page.slug}/${username}` : '../' + page.slug
           )}
         >
           {page.title}

@@ -1,6 +1,8 @@
 import React from "react";
 
-import { mainPublicPages } from "../../model/adminAssets.json";
+import admin from "../../model/adminAssets.json";
+
+const { mainPublicPages } = admin;
 
 import MenuMinified from "./MenuMinified";
 import LoginUserAdmin from "./LoginUserAdmin";

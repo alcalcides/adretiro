@@ -1,4 +1,6 @@
-import { servers } from "../../servers.json";
+import serversJSON from "../../servers.json";
+
+const { servers } = serversJSON;
 
 export function getServer() {
   let server;

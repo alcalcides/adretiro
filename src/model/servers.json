@@ -1,6 +1,6 @@
 {
   "servers": {
-    "development": "http://localhost:3333",
+    "development": "https://adretiro-dev-api.herokuapp.com",
     "review": "https://adretiro-dev-api.herokuapp.com",
     "production": "https://adretiro-api.herokuapp.com",
     "trap": "google.com"

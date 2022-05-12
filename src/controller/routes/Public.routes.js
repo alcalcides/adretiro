@@ -1,5 +1,5 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import Home from "../../view/pages/home";
 import AcessarMinhaConta from "../../view/pages/acessarMinhaConta";
@@ -10,13 +10,13 @@ import ResetPassword from "../../view/pages/resetPassword";
 
 export default function PublicRoutes() {
   return (
-    <>
-      <Route path="/" exact component={Home} />
-      <Route path="/acessar-minha-conta" component={AcessarMinhaConta} />
-      <Route path="/fazer-cadastro" component={FazerCadastro} />
-      <Route path="/redefinir-senha" component={RedefinirSenha} />
-      <Route path="/acesso-administrativo" component={AcessoAdministrativo} />
-      <Route path="/reset-password" component={ResetPassword} />
-    </>
+    <Routes>
+      <Route path="/" exact element={<Home />} />
+      <Route path="/acessar-minha-conta" element={<AcessarMinhaConta />} />
+      <Route path="/fazer-cadastro" element={<FazerCadastro />} />
+      <Route path="/redefinir-senha" element={<RedefinirSenha />} />
+      <Route path="/acesso-administrativo" element={<AcessoAdministrativo />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
+    </Routes>
   );
 }

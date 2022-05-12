@@ -1,6 +1,8 @@
 import React from "react";
 
-import { membersPages } from "../../model/adminAssets.json";
+import adminAssets from "../../model/adminAssets.json";
+
+const { membersPages } = adminAssets;
 
 import MenuMinified from "./MenuMinified";
 import JacobsSons from "./JacobsSons";
