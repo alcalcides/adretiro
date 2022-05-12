@@ -21,7 +21,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "dev": "HTTPS=true react-scripts start",
+    "dev": "react-scripts start HTTPS=true",
     "build": "react-scripts build"
   },
   "browserslist": {
