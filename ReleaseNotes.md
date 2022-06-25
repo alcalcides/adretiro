@@ -1,5 +1,22 @@
 # Release Notes
 
+## 1.0.3
++ Prevents password autocompleting
+### Issues
++ Lots of "zoom out" unwanted visual effect - from version 1.0.2
++ Provide user data access to admin while click on username
++ Prevent to users type space in password
++ Change slug of reset password page to 'atualizar-senha'
++ Provide some solution to db requests when running in the LAN
++ Provide some solution to leak memory warm
++ Fix semantic html tags in components of type 'PageFrameX'. Use <section> instead of <div>.
++ [Security] An authenticated user must not modify username url params
++ [Security] The token cannot be changed even at the beginning and the page continues to work
++ [CSS] Reset animated button style after be clicked in mobiles devices 
++ [CSS] The Jacob suns sticker must not be bigger than a desktop normal user. Avoid aply css zoom feature, but use width or other reponsive solutions.
++ [CLEANCODE] Remove code repetition among sign up and profile update features. Repeted functions: handleDepartments, includeCheckedDepartments and removeUncheckedDepartments.
++ [CLEANCODE] Refactores interface of the component "SignUpForm"  to receive an object instead of lots of destructured items. Maybe, this issue will do login form be refactored as well.
+
 ## 1.0.2
 + Replace npm by yarn
 + Fixes script dev 

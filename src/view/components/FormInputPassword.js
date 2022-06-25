@@ -33,6 +33,7 @@ export default function FormInputPassword({
         minLength="8"
         maxLength="25"
         required
+        autoComplete="new-password"
       />
       
       {!visible && <FaEye className="col-2" onClick={togleVisibility} />}
